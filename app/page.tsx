@@ -122,7 +122,7 @@ export default function HomePage() {
                   "Sociale activiteiten",
                 ],
               },
-            ].map((group, i) => (
+            ].map((group) => (
               <div
                 key={group.title}
                 className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"

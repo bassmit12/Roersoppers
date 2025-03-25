@@ -49,7 +49,9 @@ const newsArticles = [
   },
 ];
 
-const categories = ["Alle", "Wedstrijden", "Training", "Events", "Nieuws"];
+{
+  /* const categories = ["Alle", "Wedstrijden", "Training", "Events", "Nieuws"]; */
+}
 
 export default function NewsPage() {
   return (

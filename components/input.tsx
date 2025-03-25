@@ -1,8 +1,9 @@
-import React from "react"
+import React from "react";
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
-
-export const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => {
+export const Input = React.forwardRef<
+  HTMLInputElement,
+  React.InputHTMLAttributes<HTMLInputElement>
+>(({ className, ...props }, ref) => {
   return (
     <input
       className={`
@@ -14,7 +15,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className
       ref={ref}
       {...props}
     />
-  )
-})
-Input.displayName = "Input"
-
+  );
+});
+Input.displayName = "Input";
