@@ -204,15 +204,13 @@ export default function ContactPage() {
                   Locatie
                 </h3>
                 <div className="relative aspect-[4/3] overflow-hidden rounded-lg w-full">
-                  <Image
-                    src="/placeholder.svg"
-                    alt="Map location"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
-                    <p className="text-gray-500">Kaart wordt geladen...</p>
-                  </div>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d526.0054355526755!2d6.024000826205162!3d51.16162654689474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0b36d6256c4b5%3A0xda9dce6454d5ad0b!2sFeel%20Fit%20Center%20Roerdalen!5e0!3m2!1snl!2snl!4v1742898912886!5m2!1snl!2snl"
+                    className="absolute inset-0 w-full h-full"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
               </div>
             </div>
