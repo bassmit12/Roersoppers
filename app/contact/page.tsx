@@ -10,22 +10,22 @@ const faqs = [
   {
     question: "Hoe kan ik lid worden?",
     answer:
-      "U kunt lid worden door het online inschrijfformulier in te vullen of door contact op te nemen met onze ledenadministratie. Na ontvangst van uw aanmelding nemen wij contact met u op voor een proefles.",
+      "U kunt lid worden na 4 gratis proeflessen. Vul het aanmeldingsformulier in dat te vinden is op onze website en stuur het naar voorzitter@roersoppers.nl. Het lidmaatschap duurt minimaal 1 jaar en betaling gebeurt via incasso-machtiging.",
   },
   {
     question: "Wat zijn de kosten van het lidmaatschap?",
     answer:
-      "De contributie is afhankelijk van het type lidmaatschap en het aantal trainingen per week. Neem contact met ons op voor de actuele tarieven.",
+      "De contributie is afhankelijk van de trainingsgroep. Voor recreatieve groepen varieert dit van €130 (Masters 2) tot €290 (Jongeren Recreatief) per jaar. Voor wedstrijdgroepen bedraagt het €254 (Jeugd) of €290 (Jongeren/Masters) per jaar. Familiekorting is beschikbaar.",
   },
   {
-    question: "Kan ik eerst een proefles volgen?",
+    question: "Kan ik eerst proeflessen volgen?",
     answer:
-      "Ja, we bieden de mogelijkheid om eerst een proefles te volgen. Zo kunt u kennismaken met onze vereniging en bepalen welke groep het beste bij u past.",
+      "Ja, we bieden 4 gratis proeflessen zodat u kunt kennismaken met onze vereniging en bepalen welke groep het beste bij u past.",
   },
   {
-    question: "Welke zwemkleding is verplicht?",
+    question: "Hoe kan ik mijn lidmaatschap opzeggen?",
     answer:
-      "Voor wedstrijdzwemmers is een wedstrijdbadpak of zwembroek verplicht. Voor recreatieve zwemmers volstaat gewone zwemkleding.",
+      "Senioren dienen op te zeggen vóór 1 november. Andere leden kunnen opzeggen vóór 1 juli of 1 november. Bij late opzegging worden KNZB-meldkosten en maandelijkse contributie in rekening gebracht.",
   },
 ];
 
@@ -150,23 +150,12 @@ export default function ContactPage() {
                       <MapPin className="h-6 w-6 text-[#3b82f6]" />
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900">Adres</p>
+                      <p className="font-medium text-gray-900">Locatie</p>
                       <p className="mt-1 text-gray-600">
-                        Zwembad De Roerdomp
+                        LACO Feel Fit Centrum
                         <br />
-                        Achilleslaan 2a
-                        <br />
-                        6042 JV Roermond
+                        Melick
                       </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-[#3b82f6]/10 p-3">
-                      <Phone className="h-6 w-6 text-[#3b82f6]" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-900">Telefoon</p>
-                      <p className="mt-1 text-gray-600">+31 (0)6 12345678</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -176,6 +165,22 @@ export default function ContactPage() {
                     <div>
                       <p className="font-medium text-gray-900">E-mail</p>
                       <p className="mt-1 text-gray-600">info@roersoppers.nl</p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        Ledenadministratie: admin@roersoppers.nl
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="rounded-lg bg-[#3b82f6]/10 p-3">
+                      <div className="h-6 w-6 text-[#3b82f6] flex items-center justify-center font-bold">
+                        €
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-900">Bankgegevens</p>
+                      <p className="mt-1 text-gray-600">
+                        IBAN: NL66RABO0121496120
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -184,14 +189,18 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">
-                        Openingstijden
+                        Trainingstijden
                       </p>
                       <p className="mt-1 text-gray-600">
-                        Maandag t/m vrijdag: 17:00 - 21:00
+                        Maandag: 18:30 - 20:00
                         <br />
-                        Zaterdag: 09:00 - 12:00
+                        Dinsdag: 18:30 - 20:30
                         <br />
-                        Zondag: Gesloten
+                        Woensdag: 18:30 - 20:00
+                        <br />
+                        Donderdag: 18:30 - 22:30
+                        <br />
+                        Zaterdag: 08:00 - 09:00, 12:00 - 13:15
                       </p>
                     </div>
                   </div>
@@ -214,6 +223,69 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Board Members Section */}
+      <section className="w-full py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+            Ons Bestuur
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {[
+              {
+                name: "Charles Bos",
+                role: "Voorzitter",
+                email: "voorzitter@roersoppers.nl",
+              },
+              {
+                name: "Koen Wijnands",
+                role: "TC & Trainerszaken",
+                email: "tc@roersoppers.nl, trainers@roersoppers.nl",
+              },
+              {
+                name: "Joep Thewissen",
+                role: "Penningmeester",
+                email: "penningmeester@roersoppers.nl",
+              },
+              {
+                name: "Jeroen Meuleners",
+                role: "Algemeen lid & Basisinformatie",
+                email: "info@roersoppers.nl",
+              },
+              {
+                name: "Saskia Ramakers",
+                role: "Algemeen lid & PR",
+                email: "pr@roersoppers.nl",
+              },
+              {
+                name: "Marleen Schmitz",
+                role: "Ledenadministratie",
+                email: "admin@roersoppers.nl",
+              },
+              {
+                name: "Nicole Janssen",
+                role: "Ledenadministratie",
+                email: "admin@roersoppers.nl",
+              },
+            ].map((member, index) => (
+              <div
+                key={index}
+                className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+              >
+                <h3 className="font-bold text-gray-900">{member.name}</h3>
+                <p className="text-sm text-gray-500">{member.role}</p>
+                <a
+                  href={`mailto:${member.email.split(",")[0].trim()}`}
+                  className="mt-3 inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800"
+                >
+                  <Mail className="mr-1 h-4 w-4" />
+                  {member.email.split(",")[0].trim()}
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>

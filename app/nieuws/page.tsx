@@ -2,56 +2,55 @@ import Image from "next/image";
 import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight, Instagram } from "lucide-react";
 import { SearchBar } from "@/components/search-bar";
 import { Footer } from "@/components/footer";
+import { InstagramFeed } from "@/components/instagram-feed";
+import { NewsCard } from "@/components/news-card";
 
+// Updated news articles with local images
 const newsArticles = [
   {
     id: 1,
-    title: "Nationale Kampioenschappen Success",
-    date: "22 Feb 2024",
+    title: "Clubkampioenschappen",
+    date: "30 Mar 2024",
     category: "Wedstrijden",
-    image:
-      "https://images.unsplash.com/photo-1519861155730-0b5fbf0dd889?w=800&h=500&fit=crop",
+    image: "/images/clubkampioenschappen.jpg",
     excerpt:
-      "Onze zwemmers hebben uitstekend gepresteerd tijdens de laatste kampioenschappen met meerdere medailles en persoonlijke records.",
+      "Op zondag 30 maart vonden de clubkampioenschappen van SG Patrick – de Roersoppers plaats in Melick. Het was een super gezellige en sportieve middag.",
+    url: "/nieuws/clubkampioenschappen",
   },
   {
     id: 2,
-    title: "Nieuwe Trainingstijden Aangekondigd",
-    date: "20 Feb 2024",
-    category: "Training",
-    image:
-      "https://images.unsplash.com/photo-1560089000-7433a4ebbd64?w=800&h=500&fit=crop",
+    title: "200m KST Wedstrijd",
+    date: "1 Apr 2024",
+    category: "Wedstrijden",
+    image: "/images/200m-kst.jpg",
     excerpt:
-      "Bekijk de nieuwe trainingstijden voor het komende seizoen. Aangepaste tijden voor alle groepen.",
+      "Waar de meeste zwemmers en zwemsters van SG Patrick – de Roersoppers aanwezig waren op de eigen Clubkampioenschappen, kozen Jana en Gido voor een wedstrijd in het buitenland.",
+    url: "/nieuws/200m-kst",
   },
   {
     id: 3,
-    title: "Zwemclinic met Olympisch Kampioen",
-    date: "18 Feb 2024",
-    category: "Events",
-    image:
-      "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&h=500&fit=crop",
+    title: "Competitie Deel 5",
+    date: "6 Apr 2024",
+    category: "Competitie",
+    image: "/images/competitie-deel-5.jpg",
     excerpt:
-      "Een unieke kans om te trainen met een Olympisch kampioen. Schrijf je nu in voor deze exclusieve clinic.",
+      "De eerste vier wedstrijden in de Nationale Zwemcompetitie gingen voor onze startgemeenschap meer dan goed. Op 6 april was het tijd voor de laatste ronde.",
+    url: "/nieuws/competitie-deel-5",
   },
   {
     id: 4,
-    title: "Clubkampioenschappen 2024",
-    date: "15 Feb 2024",
-    category: "Wedstrijden",
-    image:
-      "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=800&h=500&fit=crop",
+    title: "Aankomende Trainingen",
+    date: "15 Apr 2024",
+    category: "Training",
+    image: "/images/clubkampioenschappen.jpg",
     excerpt:
-      "De voorbereidingen voor de clubkampioenschappen zijn in volle gang. Bekijk het programma.",
+      "Bekijk het schema voor de aankomende trainingen en bereid je voor op de volgende competitieronde.",
+    url: "/nieuws/trainingen-april",
   },
 ];
-
-{
-  /* const categories = ["Alle", "Wedstrijden", "Training", "Events", "Nieuws"]; */
-}
 
 export default function NewsPage() {
   return (
@@ -62,7 +61,7 @@ export default function NewsPage() {
       <section className="relative py-24 w-full">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-950 to-blue-900">
           <Image
-            src="https://images.unsplash.com/photo-1519861155730-0b5fbf0dd889?w=1800&h=400&fit=crop"
+            src="/images/competitie-deel-5.jpg"
             alt="Swimming news"
             fill
             className="object-cover opacity-20"
@@ -79,114 +78,114 @@ export default function NewsPage() {
         </div>
       </section>
 
-      {/* Featured Article */}
+      {/* Featured Instagram Post */}
       <section className="container -mt-16 relative z-10">
         <div className="rounded-xl bg-white p-6 shadow-lg sm:p-8">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="relative aspect-video overflow-hidden rounded-lg">
               <Image
-                src="https://images.unsplash.com/photo-1519861155730-0b5fbf0dd889?w=800&h=500&fit=crop"
-                alt="Featured news"
+                src="/images/clubkampioenschappen.jpg"
+                alt="Featured Instagram post"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="flex flex-col justify-center">
               <div className="mb-4 flex items-center gap-4">
-                <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
-                  Uitgelicht
+                <span className="flex items-center rounded-full bg-[#E1306C]/10 px-3 py-1 text-sm font-medium text-[#E1306C]">
+                  <Instagram className="mr-2 h-4 w-4" />
+                  Instagram
                 </span>
                 <span className="flex items-center text-sm text-gray-500">
                   <Calendar className="mr-2 h-4 w-4" />
-                  22 Feb 2024
+                  30 maart 2024
                 </span>
               </div>
               <h2 className="mb-4 text-3xl font-bold text-gray-900">
-                Nationale Kampioenschappen Success
+                Clubkampioenschappen
               </h2>
               <p className="mb-6 text-gray-600">
-                Onze zwemmers hebben uitstekend gepresteerd tijdens de laatste
-                kampioenschappen. Met meerdere medailles en persoonlijke records
-                hebben ze laten zien dat hard werken loont. Een bijzondere
-                prestatie waar we als club trots op kunnen zijn.
+                Op zondag 30 maart vonden de clubkampioenschappen van SG Patrick
+                – de Roersoppers plaats in Melick. Het was een super gezellige
+                en sportieve middag. Naast het zwemmen werd ook het traditionele
+                munten duiken georganiseerd.
               </p>
-              <Button className="group w-fit bg-[#3b82f6] text-white hover:bg-[#1d4ed8]">
-                Lees meer
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button
+                className="group w-fit bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737] text-white hover:opacity-90"
+                asChild
+              >
+                <a
+                  href="https://www.instagram.com/patrickderoersopperssg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Volg ons op Instagram
+                  <Instagram className="ml-2 h-4 w-4" />
+                </a>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* News Grid */}
-      <section className="container py-24">
-        {/* Search and Filter */}
-        <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <SearchBar />
-          <div className="flex flex-wrap gap-2">
-            {["Alle", "Wedstrijden", "Training", "Events", "Nieuws"].map(
-              (category) => (
-                <Button
-                  key={category}
-                  variant={category === "Alle" ? "default" : "outline"}
-                  className={
-                    category === "Alle" ? "bg-[#3b82f6] hover:bg-[#1d4ed8]" : ""
-                  }
-                  size="sm"
-                >
-                  {category}
-                </Button>
-              ),
-            )}
-          </div>
+      {/* News Articles Grid */}
+      <section className="container py-12">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-gray-900">Laatste Nieuws</h2>
+          <p className="text-gray-600">
+            Bekijk de laatste updates van De Roersoppers
+          </p>
         </div>
 
-        {/* Articles Grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {newsArticles.map((article) => (
-            <article
+            <NewsCard
               key={article.id}
-              className="group overflow-hidden rounded-xl bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
-            >
-              <div className="relative aspect-video overflow-hidden">
-                <Image
-                  src={article.image || "/placeholder.svg"}
-                  alt={article.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-4 flex items-center gap-4">
-                  <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
-                    {article.category}
-                  </span>
-                  <span className="flex items-center text-sm text-gray-500">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    {article.date}
-                  </span>
-                </div>
-                <h3 className="mb-2 text-xl font-bold text-gray-900">
-                  {article.title}
-                </h3>
-                <p className="mb-4 text-gray-600">{article.excerpt}</p>
-                <Button
-                  variant="link"
-                  className="group p-0 text-[#1d4ed8] hover:text-[#3b82f6]"
-                >
-                  Lees meer
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </div>
-            </article>
+              title={article.title}
+              date={article.date}
+              image={article.image}
+              description={article.excerpt}
+              url={article.url}
+            />
           ))}
         </div>
+      </section>
 
-        {/* Load More */}
+      {/* Instagram Feed Section */}
+      <section className="container py-24">
+        {/* Section Header */}
+        <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900">Instagram Feed</h2>
+            <p className="text-gray-600">
+              Bekijk de laatste updates van @patrickderoersopperssg
+            </p>
+          </div>
+          <Button variant="outline" className="gap-2" asChild>
+            <a
+              href="https://www.instagram.com/patrickderoersopperssg/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram className="h-4 w-4" />
+              <span>Volg ons</span>
+            </a>
+          </Button>
+        </div>
+
+        {/* Instagram Feed */}
+        <InstagramFeed username="patrickderoersopperssg" count={3} />
+
+        {/* View More Button */}
         <div className="mt-12 text-center">
-          <Button variant="outline" className="px-8">
-            Meer artikelen laden
+          <Button variant="outline" className="px-8" asChild>
+            <a
+              href="https://www.instagram.com/patrickderoersopperssg/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Meer posts bekijken
+            </a>
           </Button>
         </div>
       </section>

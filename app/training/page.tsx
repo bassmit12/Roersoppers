@@ -6,30 +6,48 @@ import { Footer } from "@/components/footer";
 
 const schedule = {
   Maandag: [
-    { time: "17:00 - 18:00", group: "Recreatief Jeugd", level: "Beginners" },
-    { time: "18:00 - 19:30", group: "Wedstrijd", level: "Gevorderd" },
-    { time: "19:30 - 21:00", group: "Masters", level: "Gevorderd" },
+    { time: "18:30 - 20:00", group: "Jongeren Recreatief", level: "Gevorderd" },
+    { time: "18:30 - 20:00", group: "Jongeren Wedstrijd", level: "Gevorderd" },
+    { time: "18:30 - 20:00", group: "Wedstrijdmasters", level: "Gevorderd" },
   ],
   Dinsdag: [
-    { time: "17:00 - 18:30", group: "Wedstrijd Jeugd", level: "Gevorderd" },
-    { time: "18:30 - 20:00", group: "Recreatief", level: "Gevorderd" },
+    { time: "18:30 - 19:30", group: "Jeugd Recreatief", level: "Beginners" },
+    {
+      time: "18:30 - 19:30",
+      group: "Jeugd Wedstrijd",
+      level: "Beginners/Gevorderd",
+    },
+    { time: "19:30 - 20:30", group: "Masters 1", level: "Gevorderd" },
   ],
   Woensdag: [
-    { time: "17:00 - 18:00", group: "Recreatief Jeugd", level: "Beginners" },
-    { time: "18:00 - 19:30", group: "Wedstrijd", level: "Gevorderd" },
-    { time: "19:30 - 21:00", group: "Masters", level: "Gevorderd" },
+    { time: "18:30 - 20:00", group: "Jongeren Recreatief", level: "Gevorderd" },
+    { time: "18:30 - 20:00", group: "Jongeren Wedstrijd", level: "Gevorderd" },
+    { time: "18:30 - 20:00", group: "Wedstrijdmasters", level: "Gevorderd" },
   ],
   Donderdag: [
-    { time: "17:00 - 18:30", group: "Wedstrijd Jeugd", level: "Gevorderd" },
-    { time: "18:30 - 20:00", group: "Recreatief", level: "Gevorderd" },
-  ],
-  Vrijdag: [
-    { time: "17:00 - 18:00", group: "Recreatief Jeugd", level: "Beginners" },
-    { time: "18:00 - 19:30", group: "Wedstrijd", level: "Gevorderd" },
+    { time: "18:30 - 19:30", group: "Jeugd Recreatief", level: "Beginners" },
+    {
+      time: "18:30 - 19:30",
+      group: "Jeugd Wedstrijd",
+      level: "Beginners/Gevorderd",
+    },
+    { time: "19:30 - 20:30", group: "Masters 1", level: "Gevorderd" },
+    { time: "20:30 - 21:30", group: "Jongeren Recreatief", level: "Gevorderd" },
+    { time: "20:30 - 21:30", group: "Jongeren Wedstrijd", level: "Gevorderd" },
+    { time: "20:30 - 21:30", group: "Wedstrijdmasters", level: "Gevorderd" },
+    { time: "21:30 - 22:30", group: "Masters 2", level: "Recreatief" },
   ],
   Zaterdag: [
-    { time: "09:00 - 10:30", group: "Wedstrijd", level: "Gevorderd" },
-    { time: "10:30 - 12:00", group: "Masters", level: "Gevorderd" },
+    { time: "08:00 - 09:00", group: "Jongeren Recreatief", level: "Gevorderd" },
+    { time: "08:00 - 09:00", group: "Jongeren Wedstrijd", level: "Gevorderd" },
+    { time: "08:00 - 09:00", group: "Wedstrijdmasters", level: "Gevorderd" },
+    { time: "08:00 - 09:00", group: "Masters 1", level: "Gevorderd" },
+    { time: "12:00 - 13:15", group: "Jeugd Recreatief", level: "Beginners" },
+    {
+      time: "12:00 - 13:15",
+      group: "Jeugd Wedstrijd",
+      level: "Beginners/Gevorderd",
+    },
   ],
 };
 
@@ -108,8 +126,8 @@ export default function TrainingPage() {
                         session.group.includes("Recreatief")
                           ? "bg-blue-200"
                           : session.group.includes("Wedstrijd")
-                            ? "bg-blue-400 text-white"
-                            : "bg-blue-600 text-white"
+                          ? "bg-blue-400 text-white"
+                          : "bg-blue-600 text-white"
                       }`}
                     >
                       <div className="flex items-center gap-2">
@@ -133,6 +151,81 @@ export default function TrainingPage() {
         </div>
       </section>
 
+      {/* Training Groups Section */}
+      <section className="container py-24">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+            Onze Trainingsgroepen
+          </h2>
+          <p className="text-gray-600">
+            Bij De Roersoppers bieden we verschillende trainingsgroepen aan,
+            aangepast aan je leeftijd, niveau en ambities.
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              title: "Jeugd Wedstrijd",
+              description:
+                "Voor zwemmers met A-diploma, focus op techniek, conditie en wedstrijden (10–12 per seizoen). Minimaal 3 trainingen per week.",
+              colorClass: "bg-blue-400",
+              textClass: "text-white",
+            },
+            {
+              title: "Jeugd Recreatief",
+              description:
+                "Voor zwemmers met A-diploma die vooral plezier willen, zonder wedstrijddruk; deelnemen aan wedstrijden optioneel.",
+              colorClass: "bg-blue-200",
+              textClass: "text-gray-800",
+            },
+            {
+              title: "Jongeren Wedstrijd",
+              description:
+                "Passie voor zwemmen; techniek-, duur- en sprinttraining gericht op competitie (district, kampioenschappen). Minimaal 3 trainingen per week.",
+              colorClass: "bg-blue-400",
+              textClass: "text-white",
+            },
+            {
+              title: "Jongeren Recreatief",
+              description:
+                "Serieuze training zonder wedstrijddruk; focus op techniek, snelheid en conditie in motiverende sfeer.",
+              colorClass: "bg-blue-200",
+              textClass: "text-gray-800",
+            },
+            {
+              title: "Wedstrijdmasters",
+              description:
+                "Masters vanaf 25+ met leeftijdscategorieën per 5 jaar; training met jeugd, focus op prestaties.",
+              colorClass: "bg-blue-600",
+              textClass: "text-white",
+            },
+            {
+              title: "Masters 1",
+              description:
+                "Conditietraining zonder wedstrijden in banen op niveau; voor oud-wedstrijdzwemmers en nieuwe techniek-leerders.",
+              colorClass: "bg-blue-600",
+              textClass: "text-white",
+            },
+            {
+              title: "Masters 2",
+              description:
+                "Gezellige conditietraining in eigen tempo; focus op samen lachen en zwemmen op iets lager tempo dan Masters 1.",
+              colorClass: "bg-blue-600",
+              textClass: "text-white",
+            },
+          ].map((group) => (
+            <div
+              key={group.title}
+              className={`rounded-lg p-6 shadow-lg ${group.colorClass} ${group.textClass}`}
+            >
+              <h3 className="text-xl font-bold mb-2">{group.title}</h3>
+              <p>{group.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Additional Info Section */}
       <section className="container pb-24">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -141,11 +234,13 @@ export default function TrainingPage() {
             <p className="text-gray-600">
               Alle trainingen vinden plaats in:
               <br />
-              Zwembad De Roerdomp
+              LACO Feel Fit Centrum
               <br />
-              Achilleslaan 2a
+              Melick
               <br />
-              6042 JV Roermond
+              <span className="mt-2 block text-sm">
+                Samenwerking met partnerclub ZV Patrick (Echt) sinds 2016-2017
+              </span>
             </p>
           </div>
           <div className="rounded-xl bg-white p-6 shadow-lg">
