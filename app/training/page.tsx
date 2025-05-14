@@ -6,46 +6,51 @@ import { Footer } from "@/components/footer";
 
 const schedule = {
   Maandag: [
-    { time: "18:30 - 20:00", group: "Jongeren Recreatief", level: "Gevorderd" },
-    { time: "18:30 - 20:00", group: "Jongeren Wedstrijd", level: "Gevorderd" },
-    { time: "18:30 - 20:00", group: "Wedstrijdmasters", level: "Gevorderd" },
+    {
+      time: "18:30 - 20:00",
+      group: "Jongeren Recreatief/Jongeren Wedstrijd/Wedstrijdmasters",
+      level: "Gevorderd",
+    },
   ],
   Dinsdag: [
-    { time: "18:30 - 19:30", group: "Jeugd Recreatief", level: "Beginners" },
     {
       time: "18:30 - 19:30",
-      group: "Jeugd Wedstrijd",
+      group: "Jeugd Recreatief/Jeugd Wedstrijd",
       level: "Beginners/Gevorderd",
     },
     { time: "19:30 - 20:30", group: "Masters 1", level: "Gevorderd" },
   ],
   Woensdag: [
-    { time: "18:30 - 20:00", group: "Jongeren Recreatief", level: "Gevorderd" },
-    { time: "18:30 - 20:00", group: "Jongeren Wedstrijd", level: "Gevorderd" },
-    { time: "18:30 - 20:00", group: "Wedstrijdmasters", level: "Gevorderd" },
+    {
+      time: "18:30 - 20:00",
+      group: "Jongeren Recreatief/Jongeren Wedstrijd/Wedstrijdmasters",
+      level: "Gevorderd",
+    },
   ],
   Donderdag: [
-    { time: "18:30 - 19:30", group: "Jeugd Recreatief", level: "Beginners" },
     {
       time: "18:30 - 19:30",
-      group: "Jeugd Wedstrijd",
+      group: "Jeugd Recreatief/Jeugd Wedstrijd",
       level: "Beginners/Gevorderd",
     },
-    { time: "19:30 - 20:30", group: "Masters 1", level: "Gevorderd" },
-    { time: "20:30 - 21:30", group: "Jongeren Recreatief", level: "Gevorderd" },
-    { time: "20:30 - 21:30", group: "Jongeren Wedstrijd", level: "Gevorderd" },
-    { time: "20:30 - 21:30", group: "Wedstrijdmasters", level: "Gevorderd" },
+    {
+      time: "19:30 - 20:30",
+      group: "Jongeren Recreatief/Jongeren Wedstrijd/Wedstrijdmasters",
+      level: "Gevorderd",
+    },
+    { time: "20:30 - 21:30", group: "Masters 1", level: "Gevorderd" },
     { time: "21:30 - 22:30", group: "Masters 2", level: "Recreatief" },
   ],
   Zaterdag: [
-    { time: "08:00 - 09:00", group: "Jongeren Recreatief", level: "Gevorderd" },
-    { time: "08:00 - 09:00", group: "Jongeren Wedstrijd", level: "Gevorderd" },
-    { time: "08:00 - 09:00", group: "Wedstrijdmasters", level: "Gevorderd" },
-    { time: "08:00 - 09:00", group: "Masters 1", level: "Gevorderd" },
-    { time: "12:00 - 13:15", group: "Jeugd Recreatief", level: "Beginners" },
+    {
+      time: "08:00 - 09:00",
+      group:
+        "Jongeren Recreatief/Jongeren Wedstrijd/Wedstrijdmasters/Masters 1",
+      level: "Gevorderd",
+    },
     {
       time: "12:00 - 13:15",
-      group: "Jeugd Wedstrijd",
+      group: "Jeugd Recreatief/Jeugd Wedstrijd",
       level: "Beginners/Gevorderd",
     },
   ],
@@ -158,8 +163,10 @@ export default function TrainingPage() {
             Onze Trainingsgroepen
           </h2>
           <p className="text-gray-600">
-            Bij De Roersoppers bieden we verschillende trainingsgroepen aan,
-            aangepast aan je leeftijd, niveau en ambities.
+            Zwemmen bij De Roersoppers is voor iedereen: jong en oud, fanatiek
+            of recreatief. Of je nu snelheid en techniek wilt verbeteren of
+            gewoon lekker wilt bewegen, er is altijd een plek voor jou. Twijfel
+            je nog? Je mag vier keer gratis meetrainen!
           </p>
         </div>
 
@@ -168,49 +175,49 @@ export default function TrainingPage() {
             {
               title: "Jeugd Wedstrijd",
               description:
-                "Voor zwemmers met A-diploma, focus op techniek, conditie en wedstrijden (10–12 per seizoen). Minimaal 3 trainingen per week.",
+                "Voor zwemmers met A-diploma die verder willen! We leren je nieuwe technieken en helpen je steeds beter te worden. Serieuze trainingen worden afgewisseld met plezier, en je zwemt zo'n 10-12 wedstrijden per seizoen. We verwachten minimaal 3 trainingen per week.",
               colorClass: "bg-blue-400",
               textClass: "text-white",
             },
             {
               title: "Jeugd Recreatief",
               description:
-                "Voor zwemmers met A-diploma die vooral plezier willen, zonder wedstrijddruk; deelnemen aan wedstrijden optioneel.",
+                "Voor zwemmers met A-diploma die vooral plezier zoeken in het water. Je leert nieuwe technieken zonder de druk van wedstrijden. Je traint op je eigen tempo, en deelname aan wedstrijden is optioneel. Plezier en samenspel met leeftijdsgenoten staan voorop!",
               colorClass: "bg-blue-200",
               textClass: "text-gray-800",
             },
             {
               title: "Jongeren Wedstrijd",
               description:
-                "Passie voor zwemmen; techniek-, duur- en sprinttraining gericht op competitie (district, kampioenschappen). Minimaal 3 trainingen per week.",
+                "Voor fanatieke zwemmers met passie voor het water. Je traint op techniek, snelheid en conditie, gericht op wedstrijden in districtscompetities en kampioenschappen. Minimaal drie trainingen per week om echt beter te worden. Samen gaan we voor de beste prestaties!",
               colorClass: "bg-blue-400",
               textClass: "text-white",
             },
             {
               title: "Jongeren Recreatief",
               description:
-                "Serieuze training zonder wedstrijddruk; focus op techniek, snelheid en conditie in motiverende sfeer.",
+                "Voor fanatieke jongeren die serieus willen trainen, zonder wedstrijddruk. Je werkt aan techniek, snelheid en conditie in een gezellige en motiverende sfeer. Perfect als je je conditie wilt verbeteren of gewoon plezier beleeft aan intensief zwemmen.",
               colorClass: "bg-blue-200",
               textClass: "text-gray-800",
             },
             {
               title: "Wedstrijdmasters",
               description:
-                "Masters vanaf 25+ met leeftijdscategorieën per 5 jaar; training met jeugd, focus op prestaties.",
+                "Voor 25-plussers die fanatiek willen blijven zwemmen. Je doet mee aan speciale wedstrijden met leeftijdscategorieën per vijf jaar. Je traint samen met de jeugd om je techniek en snelheid te blijven ontwikkelen. Iedereen die fit genoeg is kan meedoen!",
               colorClass: "bg-blue-600",
               textClass: "text-white",
             },
             {
               title: "Masters 1",
               description:
-                "Conditietraining zonder wedstrijden in banen op niveau; voor oud-wedstrijdzwemmers en nieuwe techniek-leerders.",
+                "Conditietraining zonder wedstrijden, in banen op jouw niveau. Perfect voor oud-wedstrijdzwemmers of voor wie technieken wil verbeteren, zoals de borstcrawl. Een baantje overslaan mag, maar er wordt hier wel serieus getraind. Plezier en beweging staan centraal.",
               colorClass: "bg-blue-600",
               textClass: "text-white",
             },
             {
               title: "Masters 2",
               description:
-                "Gezellige conditietraining in eigen tempo; focus op samen lachen en zwemmen op iets lager tempo dan Masters 1.",
+                "Een gezonde sport, ook als je een jaartje ouder bent! Hier wordt niet alleen flink gezwommen, maar ook veel gelachen. De banen zijn verdeeld op niveau, zodat iedereen in eigen tempo kan trainen. Het zwemtempo ligt iets lager dan bij Masters 1.",
               colorClass: "bg-blue-600",
               textClass: "text-white",
             },

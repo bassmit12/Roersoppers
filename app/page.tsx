@@ -613,7 +613,7 @@ export default function HomePage() {
             <div className="group overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="/assets/images/Competitie Deel 5 - De eerste vier wedstrijden in de Nationale Zwemcompetitie gingen voor onze startgemeenschap meer dan goed . Op 6 april was het dan alweer tijd voor de laatste ronde, ronde 5 . Net zoals tijdens de eers.jpg"
+                  src="/assets/images/competitie-deel-5.jpg"
                   alt="Competitie Deel 5"
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"

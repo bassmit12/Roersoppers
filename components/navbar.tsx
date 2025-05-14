@@ -20,7 +20,9 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed z-50 w-full transition-all duration-300 ${isScrolled ? "bg-white shadow" : "bg-transparent"}`}
+      className={`fixed z-50 w-full transition-all duration-300 ${
+        isScrolled ? "bg-white shadow" : "bg-transparent"
+      }`}
     >
       <div className="container">
         <div className="flex h-20 items-center justify-between">
@@ -77,6 +79,16 @@ export function Navbar() {
               Nieuws
             </Link>
             <Link
+              href="/informatie"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled
+                  ? "text-gray-700 hover:text-blue-600"
+                  : "text-white hover:text-blue-200"
+              }`}
+            >
+              Informatie
+            </Link>
+            <Link
               href="/contact"
               className={`text-sm font-medium transition-colors ${
                 isScrolled
@@ -86,26 +98,32 @@ export function Navbar() {
             >
               Contact
             </Link>
-            <Button
-              className={`px-6 py-3 text-base font-semibold ${
-                isScrolled
-                  ? "bg-[#1d4ed8] text-white hover:bg-[#1d4ed8]"
-                  : "bg-[#1d4ed8] text-white hover:bg-[#1d4ed8]"
-              } transition-colors`}
-            >
-              Word Lid
-            </Button>
+            <Link href="/lid-worden">
+              <Button
+                className={`px-6 py-3 text-base font-semibold ${
+                  isScrolled
+                    ? "bg-[#1d4ed8] text-white hover:bg-[#1d4ed8]"
+                    : "bg-[#1d4ed8] text-white hover:bg-[#1d4ed8]"
+                } transition-colors`}
+              >
+                Word Lid
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
               <X
-                className={`h-6 w-6 ${isScrolled ? "text-gray-900" : "text-white"}`}
+                className={`h-6 w-6 ${
+                  isScrolled ? "text-gray-900" : "text-white"
+                }`}
               />
             ) : (
               <Menu
-                className={`h-6 w-6 ${isScrolled ? "text-gray-900" : "text-white"}`}
+                className={`h-6 w-6 ${
+                  isScrolled ? "text-gray-900" : "text-white"
+                }`}
               />
             )}
           </button>
@@ -144,15 +162,24 @@ export function Navbar() {
                 Nieuws
               </Link>
               <Link
+                href="/informatie"
+                className="text-sm font-medium text-gray-700 hover:text-blue-600"
+                onClick={() => setIsOpen(false)}
+              >
+                Informatie
+              </Link>
+              <Link
                 href="/contact"
                 className="text-sm font-medium text-gray-700 hover:text-blue-600"
                 onClick={() => setIsOpen(false)}
               >
                 Contact
               </Link>
-              <Button className="w-full px-6 py-3 text-base font-semibold bg-[#1d4ed8] text-white hover:bg-[#1d4ed8]">
-                Word Lid
-              </Button>
+              <Link href="/lid-worden" onClick={() => setIsOpen(false)}>
+                <Button className="w-full px-6 py-3 text-base font-semibold bg-[#1d4ed8] text-white hover:bg-[#1d4ed8]">
+                  Word Lid
+                </Button>
+              </Link>
             </div>
           </div>
         )}
