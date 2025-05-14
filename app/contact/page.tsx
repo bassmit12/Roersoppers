@@ -3,7 +3,7 @@ import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Clock, ChevronDown, Send } from "lucide-react";
+import { MapPin, Mail, Clock, ChevronDown, Send } from "lucide-react";
 import { Footer } from "@/components/footer";
 
 const faqs = [

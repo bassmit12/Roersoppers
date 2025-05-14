@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 
 interface InstagramPostProps {
   username: string;
-  profilePic?: string;
   imageUrl: string;
   caption: string;
   timestamp: string;
@@ -33,7 +32,6 @@ const getLocalImagePath = (path: string) => {
 
 export function InstagramPost({
   username,
-  profilePic,
   imageUrl,
   caption,
   timestamp,
@@ -91,10 +89,9 @@ export function InstagramPost({
 
 // Component to fetch and display instagram posts
 export function InstagramFeed({
-  username,
   count = 3,
 }: {
-  username: string;
+  username?: string;
   count?: number;
 }) {
   // Using local images from the public folder
