@@ -28,7 +28,7 @@ export function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-Roersoppers-t4gekyM7SINMMpk9V8Uo3i0fPtNKxr.png"
+              src="/images/logo.png"
               alt="Roersoppers Logo"
               width={48}
               height={48}
@@ -67,16 +67,6 @@ export function Navbar() {
               }`}
             >
               Wedstrijden
-            </Link>
-            <Link
-              href="/nieuws"
-              className={`text-sm font-medium transition-colors ${
-                isScrolled
-                  ? "text-gray-700 hover:text-blue-600"
-                  : "text-white hover:text-blue-200"
-              }`}
-            >
-              Nieuws
             </Link>
             <Link
               href="/informatie"
@@ -153,13 +143,6 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 Wedstrijden
-              </Link>
-              <Link
-                href="/nieuws"
-                className="text-sm font-medium text-gray-700 hover:text-blue-600"
-                onClick={() => setIsOpen(false)}
-              >
-                Nieuws
               </Link>
               <Link
                 href="/informatie"

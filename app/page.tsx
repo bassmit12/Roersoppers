@@ -3,7 +3,7 @@ import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/footer";
-import { FacebookFeed } from "@/components/facebook-feed";
+import { InstagramFeed } from "@/components/instagram-feed";
 
 export default function HomePage() {
   return (
@@ -14,7 +14,7 @@ export default function HomePage() {
       <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-950 to-blue-900">
         <div className="absolute inset-0 opacity-20">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/premium_photo-1664475361436-e37f6f2ba407.jpg-5GWvuO9rMDuDmkqzji71uEqFoE6PAT.jpeg"
+            src="/images/hero.jpg"
             alt="Swimming background"
             fill
             className="object-cover"
@@ -27,7 +27,7 @@ export default function HomePage() {
             <div className="flex flex-col items-center lg:items-start">
               <div className="mb-8 lg:hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-Roersoppers-t4gekyM7SINMMpk9V8Uo3i0fPtNKxr.png"
+                  src="/images/logo.png"
                   alt="Roersoppers Logo"
                   width={300}
                   height={300}
@@ -99,7 +99,7 @@ export default function HomePage() {
             </div>
             <div className="relative hidden lg:flex justify-end items-center">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-Roersoppers-t4gekyM7SINMMpk9V8Uo3i0fPtNKxr.png"
+                src="/images/logo.png"
                 alt="Roersoppers Logo"
                 width={300}
                 height={300}
@@ -128,8 +128,7 @@ export default function HomePage() {
                 title: "Jeugd",
                 description:
                   "Voor zwemmers met A-diploma. We bieden zowel recreatieve training als wedstrijdtraining, met focus op techniek en conditie.",
-                image:
-                  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/swim-lessons-images.jpg-zcc3ffCWQxeQhgRkyEQhFqjx4wtuDl.jpeg",
+                image: "/images/junioren.jpg",
                 features: [
                   "3+ trainingen per week",
                   "Focus op zwemtechniek",
@@ -140,8 +139,7 @@ export default function HomePage() {
                 title: "Jongeren",
                 description:
                   "Voor oudere zwemmers met passie voor de sport. Intensieve techniek-, duur- en sprinttraining gericht op competitie of recreatief zwemmen.",
-                image:
-                  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Adult-swim_680x332px-h2NW62QwFmRA4zyGnVhL8Wtryq99ij.webp",
+                image: "/images/wedstrijdploeg.jpg",
                 features: [
                   "3-4 trainingen per week",
                   "Technische perfectionering",
@@ -152,8 +150,7 @@ export default function HomePage() {
                 title: "Masters",
                 description:
                   "Voor zwemmers vanaf 25+ jaar. Training op eigen niveau en tempo, van competitief tot ontspannen conditietraining in gezellige sfeer.",
-                image:
-                  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20160403_110737%20(800x584).jpg-djbU5v7kufc7VGPUpwl3RGLV3Vo4VG.jpeg",
+                image: "/images/senioren.jpg",
                 features: [
                   "Training op eigen niveau",
                   "1-4 trainingen per week",
@@ -165,15 +162,25 @@ export default function HomePage() {
                 key={group.title}
                 className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="aspect-[4/3] relative">
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  {/* Scaled image layer (always below overlays) */}
                   <Image
                     src={group.image || "/placeholder.svg"}
                     alt={group.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105 z-0"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/75 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
+
+                  {/* Overlay layers container (independent from scaling) */}
+                  <div className="absolute inset-0 z-20 pointer-events-none">
+                    {/* Global soft overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
+                    {/* Strong bottom overlay that stays visible on hover */}
+                    <div className="absolute inset-x-0 bottom-0 h-28 sm:h-32 md:h-36 bg-gradient-to-t from-black/90 to-transparent opacity-95 transition-opacity duration-300 group-hover:opacity-100" />
+                  </div>
+
+                  {/* Text content above overlays */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 z-30">
                     <h3 className="text-2xl font-bold text-white mb-2">
                       {group.title}
                     </h3>
@@ -202,590 +209,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* About Us Section */}
-      <section className="py-8 sm:py-16 md:py-24 bg-white">
-        <div className="container px-4 sm:px-6">
-          <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 sm:text-4xl mb-2 sm:mb-4">
-              Over Ons
-            </h2>
-            <p className="text-gray-600 text-sm sm:text-base mx-auto max-w-xl">
-              Een geweldige zwemvereniging die al sinds 1970 actief is.
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="rounded-xl bg-gray-50/50 p-4 sm:p-6 md:p-8 shadow-sm">
-              <div className="prose prose-lg max-w-none text-sm sm:text-base">
-                <p>
-                  Wij zetten ons vol enthousiasme in voor De Roersoppers, een
-                  geweldige zwemvereniging die al sinds 1970 actief is. Doe je
-                  ook mee? We kunnen altijd vrijwilligers gebruiken,
-                  bijvoorbeeld bij het organiseren van extra activiteiten of om
-                  als official bij wedstrijden te jureren. Misschien spreken we
-                  je in de wandelgangen aan – we kunnen jouw hulp goed
-                  gebruiken!
-                </p>
-              </div>
-
-              <div className="mt-6 sm:mt-8">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 pb-2 border-b border-gray-200">
-                  Bestuur
-                </h3>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <ul className="space-y-4">
-                      <li className="flex flex-col p-2 hover:bg-blue-50 rounded-md transition-colors">
-                        <span className="font-semibold text-base sm:text-lg">
-                          Charles Bos
-                        </span>
-                        <span className="text-gray-600 text-sm">
-                          Voorzitter
-                        </span>
-                        <a
-                          href="mailto:voorzitter@roersoppers.nl"
-                          className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-4 h-4 mr-1"
-                          >
-                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                          </svg>
-                          voorzitter@roersoppers.nl
-                        </a>
-                      </li>
-                      <li className="flex flex-col p-2 hover:bg-blue-50 rounded-md transition-colors">
-                        <span className="font-semibold text-base sm:text-lg">
-                          Koen Wijnands
-                        </span>
-                        <span className="text-gray-600 text-sm">
-                          TCzaken en Trainerszaken
-                        </span>
-                        <div className="flex flex-col mt-1">
-                          <a
-                            href="mailto:tc@roersoppers.nl"
-                            className="text-[#3b82f6] hover:underline text-sm inline-flex items-center"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              className="w-4 h-4 mr-1"
-                            >
-                              <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                              <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                            </svg>
-                            tc@roersoppers.nl
-                          </a>
-                          <a
-                            href="mailto:trainers@roersoppers.nl"
-                            className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              className="w-4 h-4 mr-1"
-                            >
-                              <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                              <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                            </svg>
-                            trainers@roersoppers.nl
-                          </a>
-                        </div>
-                      </li>
-                      <li className="flex flex-col p-2 hover:bg-blue-50 rounded-md transition-colors">
-                        <span className="font-semibold text-base sm:text-lg">
-                          Joep Thewissen
-                        </span>
-                        <span className="text-gray-600 text-sm">
-                          Penningmeester
-                        </span>
-                        <a
-                          href="mailto:penningmeester@roersoppers.nl"
-                          className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-4 h-4 mr-1"
-                          >
-                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                          </svg>
-                          penningmeester@roersoppers.nl
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul className="space-y-4">
-                      <li className="flex flex-col p-2 hover:bg-blue-50 rounded-md transition-colors">
-                        <span className="font-semibold text-base sm:text-lg">
-                          Jeroen Meuleners
-                        </span>
-                        <span className="text-gray-600 text-sm">
-                          Algemeen lid en basisinformatie
-                        </span>
-                        <a
-                          href="mailto:info@roersoppers.nl"
-                          className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-4 h-4 mr-1"
-                          >
-                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                          </svg>
-                          info@roersoppers.nl
-                        </a>
-                      </li>
-                      <li className="flex flex-col p-2 hover:bg-blue-50 rounded-md transition-colors">
-                        <span className="font-semibold text-base sm:text-lg">
-                          Saskia Ramakers
-                        </span>
-                        <span className="text-gray-600 text-sm">
-                          Algemeen lid en pr zaken
-                        </span>
-                        <a
-                          href="mailto:pr@roersoppers.nl"
-                          className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-4 h-4 mr-1"
-                          >
-                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                          </svg>
-                          pr@roersoppers.nl
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 sm:mt-8">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 pb-2 border-b border-gray-200">
-                  Boekhouding en Ledenadministratie
-                </h3>
-                <div className="grid gap-2 sm:grid-cols-2">
-                  <div className="p-2 hover:bg-blue-50 rounded-md transition-colors">
-                    <span className="font-semibold text-base sm:text-lg block">
-                      Marleen Schmitz
-                    </span>
-                    <a
-                      href="mailto:admin@roersoppers.nl"
-                      className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="w-4 h-4 mr-1"
-                      >
-                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                      </svg>
-                      admin@roersoppers.nl
-                    </a>
-                  </div>
-                  <div className="p-2 hover:bg-blue-50 rounded-md transition-colors">
-                    <span className="font-semibold text-base sm:text-lg block">
-                      Nicole Janssen
-                    </span>
-                    <a
-                      href="mailto:admin@roersoppers.nl"
-                      className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="w-4 h-4 mr-1"
-                      >
-                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                      </svg>
-                      admin@roersoppers.nl
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="space-y-6">
-                <div className="rounded-xl bg-gray-50/50 p-4 sm:p-6 md:p-8 shadow-sm">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 pb-2 border-b border-gray-200">
-                    Trainers
-                  </h3>
-                  <p className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-                    Bij De Roersoppers zetten onze trainers zich in om elke
-                    zwemmer uit te dagen en te motiveren. Beginnende zwemmers
-                    krijgen een solide basis, terwijl ervaren zwemmers worden
-                    geholpen om hun techniek en prestaties te verfijnen.
-                    Iedereen traint op zijn eigen niveau, met de juiste balans
-                    tussen plezier en uitdaging.
-                  </p>
-
-                  <div className="mb-3 sm:mb-4 text-base font-semibold">
-                    Dit zijn onze trainers:
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Charles Bos",
-                      "Arno Schrauwen",
-                      "Ernest Smit",
-                      "Koen Wijnands",
-                      "Senna Bongartz",
-                      "Mike Jansen",
-                      "Marco Moers",
-                      "René Zenden",
-                      "Loes Slebe",
-                      "Eva Wassenberg",
-                      "Jules Gripling",
-                      "Max Martens",
-                    ].map((trainer, index) => (
-                      <span
-                        key={index}
-                        className="bg-blue-50 px-2 py-1 rounded-md text-sm inline-block"
-                      >
-                        {trainer}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-4 sm:mt-6">
-                    <p className="text-gray-700 text-sm">
-                      Heb je een vraag aan een van onze trainers, mail dan naar:
-                    </p>
-                    <a
-                      href="mailto:trainers@roersoppers.nl"
-                      className="text-[#3b82f6] font-semibold hover:underline text-sm mt-1 inline-flex items-center"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="w-4 h-4 mr-1"
-                      >
-                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                      </svg>
-                      trainers@roersoppers.nl
-                    </a>
-                  </div>
-                </div>
-
-                <div className="p-4 sm:p-6 bg-blue-50 rounded-xl shadow-sm">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="w-6 h-6 mr-2 text-[#1d4ed8]"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    CODE BLAUW
-                  </h3>
-                  <div className="space-y-3 sm:space-y-4">
-                    <div>
-                      <p className="text-gray-700 text-sm sm:text-base">
-                        Code Blauw staat voor respect, sportiviteit, veiligheid
-                        en plezier in de zwemsport. Het is een initiatief van de
-                        KNZB waarbij zwemverenigingen en zwembaden samen zorgen
-                        voor een sportief en veilig zwemklimaat.
-                      </p>
-                      <div className="mt-3 sm:mt-4">
-                        <Button
-                          className="bg-[#3b82f6] text-white hover:bg-[#1d4ed8] text-sm py-2 h-auto w-full sm:w-auto"
-                          asChild
-                        >
-                          <a
-                            href="https://www.knzb.nl/vereniging__wedstrijdsport/bruisend_verenigingsleven/een_veilige_sportomgeving/code_blauw/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center"
-                          >
-                            Bezoek de KNZB Code Blauw pagina
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="currentColor"
-                              className="ml-2 h-3 w-3 sm:h-4 sm:w-4"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M15.75 2.25H21a.75.75 0 01.75.75v5.25a.75.75 0 01-1.5 0V4.81L8.03 17.03a.75.75 0 01-1.06-1.06L19.19 3.75h-3.44a.75.75 0 010-1.5z"
-                                clipRule="evenodd"
-                              />
-                              <path
-                                fillRule="evenodd"
-                                d="M10.5 6a.75.75 0 01.75.75v10.5c0 .414.336.75.75.75h10.5a.75.75 0 010 1.5H12a2.25 2.25 0 01-2.25-2.25V6.75A.75.75 0 0110.5 6z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </a>
-                        </Button>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-gray-700 mt-2 text-sm sm:text-base">
-                        In het kader van Code Blauw heeft onze vereniging tevens
-                        een vertrouwenspersoon aangesteld. De vertrouwenspersoon
-                        is er voor de eerste opvang van vragen, vermoedens,
-                        meldingen, klachten en aangifte van seksuele intimidatie
-                        en ander ongewenst gedrag voor leden, ouders van leden,
-                        trainers, vrijwilligers en bestuur.
-                      </p>
-                      <p className="text-gray-700 mt-2 font-semibold text-sm sm:text-base">
-                        Momenteel zijn wij op zoek naar een nieuwe
-                        vertrouwenscontactpersoon. Mensen die hiervoor
-                        belangstelling hebben kunnen zich melden bij onze
-                        voorzitter.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Latest News Section */}
-      <section className="bg-gray-50 py-24">
-        <div className="container">
-          <div className="mb-12 flex items-center justify-between">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-                Laatste Updates
-              </h2>
-              <p className="text-gray-600 mt-2">
-                Via Instagram @patrickderoersopperssg
-              </p>
-            </div>
-            <Button variant="outline" asChild>
-              <a href="/nieuws">Alle Updates</a>
-            </Button>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="group overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src="/images/clubkampioenschappen.jpg"
-                  alt="Clubkampioenschappen"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="#E1306C"
-                      className="w-5 h-5"
-                    >
-                      <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.218-1.79.465-2.428.254-.66.598-1.216 1.153-1.772.5-.509 1.105-.902 1.772-1.153.637-.247 1.363-.415 2.428-.465C8.944 2.013 9.283 2 12 2z" />
-                    </svg>
-                    <time className="text-sm text-gray-500">30 maart 2024</time>
-                  </div>
-                </div>
-                <p className="mb-4 text-gray-600">
-                  Clubkampioenschappen - Op zondag 30 maart vonden de
-                  clubkampioenschappen van SG Patrick – de Roersoppers plaats in
-                  Melick. Het was een super gezellige en sportieve middag.
-                </p>
-                <Button
-                  variant="link"
-                  className="group w-fit p-0 text-[#1d4ed8] hover:text-[#1d4ed8] transition-colors flex items-center"
-                  asChild
-                >
-                  <a
-                    href="https://www.instagram.com/patrickderoersopperssg/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span>Bekijk op Instagram</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="ml-2 h-4 w-4"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </a>
-                </Button>
-              </div>
-            </div>
-
-            <div className="group overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src="/images/200m-kst.jpg"
-                  alt="200m KST"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="#E1306C"
-                      className="w-5 h-5"
-                    >
-                      <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.218-1.79.465-2.428.254-.66.598-1.216 1.153-1.772.5-.509 1.105-.902 1.772-1.153.637-.247 1.363-.415 2.428-.465C8.944 2.013 9.283 2 12 2z" />
-                    </svg>
-                    <time className="text-sm text-gray-500">31 maart 2024</time>
-                  </div>
-                </div>
-                <p className="mb-4 text-gray-600">
-                  200m KST - Waar de meeste zwemmers en zwemsters aanwezig waren
-                  op de eigen Clubkampioenschappen, kozen Jana en Gido voor een
-                  wedstrijd in het buitenland.
-                </p>
-                <Button
-                  variant="link"
-                  className="group w-fit p-0 text-[#1d4ed8] hover:text-[#1d4ed8] transition-colors flex items-center"
-                  asChild
-                >
-                  <a
-                    href="https://www.instagram.com/patrickderoersopperssg/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span>Bekijk op Instagram</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="ml-2 h-4 w-4"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </a>
-                </Button>
-              </div>
-            </div>
-
-            <div className="group overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src="/images/competitie-deel-5.jpg"
-                  alt="Competitie Deel 5"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="#E1306C"
-                      className="w-5 h-5"
-                    >
-                      <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.218-1.79.465-2.428.254-.66.598-1.216 1.153-1.772.5-.509 1.105-.902 1.772-1.153.637-.247 1.363-.415 2.428-.465C8.944 2.013 9.283 2 12 2z" />
-                    </svg>
-                    <time className="text-sm text-gray-500">6 april 2024</time>
-                  </div>
-                </div>
-                <p className="mb-4 text-gray-600">
-                  Competitie Deel 5 - De eerste vier wedstrijden in de Nationale
-                  Zwemcompetitie gingen voor onze startgemeenschap meer dan
-                  goed. Op 6 april was het tijd voor de laatste ronde.
-                </p>
-                <Button
-                  variant="link"
-                  className="group w-fit p-0 text-[#1d4ed8] hover:text-[#1d4ed8] transition-colors flex items-center"
-                  asChild
-                >
-                  <a
-                    href="https://www.instagram.com/patrickderoersopperssg/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span>Bekijk op Instagram</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="ml-2 h-4 w-4"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Facebook Posts Section */}
-      <section className="bg-white py-24">
-        <div className="container">
-          <div className="mb-12 flex items-center justify-between">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-                Facebook Updates
-              </h2>
-              <p className="text-gray-600 mt-2">
-                Laatste berichten van onze Facebook pagina
-              </p>
-            </div>
-            <Button variant="outline" asChild>
-              <a
-                href="https://www.facebook.com/roersoppers"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Bekijk Pagina
-              </a>
-            </Button>
-          </div>
-
-          {/* Facebook Feed Component */}
-          <FacebookFeed pageId="roersoppers" limit={3} />
         </div>
       </section>
 
@@ -851,6 +274,25 @@ export default function HomePage() {
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/2 top-0 h-[1px] w-96 -translate-x-1/2 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
           <div className="absolute left-1/2 bottom-0 h-[1px] w-96 -translate-x-1/2 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+        </div>
+      </section>
+
+      {/* Latest News Section */}
+      <section className="bg-gray-50 py-24">
+        <div className="container">
+          <div className="mb-12 flex items-center justify-between">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+                Laatste Updates
+              </h2>
+              <p className="text-gray-600 mt-2">
+                Via Instagram @patrickderoersopperssg
+              </p>
+            </div>
+          </div>
+
+          {/* Instagram Feed Component */}
+          <InstagramFeed username="patrickderoersopperssg" count={3} />
         </div>
       </section>
 

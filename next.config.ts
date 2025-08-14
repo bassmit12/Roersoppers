@@ -2,11 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: [
-      "roersoppers.nl",
-      "hebbkx1anhila5yf.public.blob.vercel-storage.com",
-      "images.unsplash.com",
-      "picsum.photos",
+    // Allow all remote hosts (use with caution)
+    remotePatterns: [
+      { protocol: "https", hostname: "**" },
+      { protocol: "http", hostname: "**" },
     ],
   },
   // This enables the Next.js webpack to process image files with very long filenames

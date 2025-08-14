@@ -23,11 +23,6 @@ export function Footer() {
                   Wedstrijden
                 </Link>
               </li>
-              <li>
-                <Link href="/nieuws" className="hover:text-blue-400 transition-colors">
-                  Nieuws
-                </Link>
-              </li>
             </ul>
           </div>
           <div className="text-center">

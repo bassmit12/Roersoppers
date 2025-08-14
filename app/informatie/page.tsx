@@ -72,6 +72,375 @@ export default function InformatiePage() {
         </div>
       </section>
 
+      {/* Over Ons Section (moved from homepage) */}
+      <section className="py-8 sm:py-16 md:py-24 bg-white">
+        <div className="container px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10 md:mb-16">
+            <h2 className="text-2xl font-bold text-gray-900 sm:text-4xl mb-2 sm:mb-4">
+              Over Ons
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base mx-auto max-w-xl">
+              Een geweldige zwemvereniging die al sinds 1970 actief is.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12">
+            <div className="rounded-xl bg-gray-50/50 p-4 sm:p-6 md:p-8 shadow-sm">
+              <div className="prose prose-lg max-w-none text-sm sm:text-base">
+                <p>
+                  Wij zetten ons vol enthousiasme in voor De Roersoppers, een
+                  geweldige zwemvereniging die al sinds 1970 actief is. Doe je
+                  ook mee? We kunnen altijd vrijwilligers gebruiken,
+                  bijvoorbeeld bij het organiseren van extra activiteiten of om
+                  als official bij wedstrijden te jureren. Misschien spreken we
+                  je in de wandelgangen aan – we kunnen jouw hulp goed
+                  gebruiken!
+                </p>
+              </div>
+
+              <div className="mt-6 sm:mt-8">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 pb-2 border-b border-gray-200">
+                  Bestuur
+                </h3>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <ul className="space-y-4">
+                      <li className="flex flex-col p-2 hover:bg-blue-50 rounded-md transition-colors">
+                        <span className="font-semibold text-base sm:text-lg">
+                          Charles Bos
+                        </span>
+                        <span className="text-gray-600 text-sm">
+                          Voorzitter
+                        </span>
+                        <a
+                          href="mailto:voorzitter@roersoppers.nl"
+                          className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="w-4 h-4 mr-1"
+                          >
+                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                          </svg>
+                          voorzitter@roersoppers.nl
+                        </a>
+                      </li>
+                      <li className="flex flex-col p-2 hover:bg-blue-50 rounded-md transition-colors">
+                        <span className="font-semibold text-base sm:text-lg">
+                          Koen Wijnands
+                        </span>
+                        <span className="text-gray-600 text-sm">
+                          TCzaken en Trainerszaken
+                        </span>
+                        <div className="flex flex-col mt-1">
+                          <a
+                            href="mailto:tc@roersoppers.nl"
+                            className="text-[#3b82f6] hover:underline text-sm inline-flex items-center"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              className="w-4 h-4 mr-1"
+                            >
+                              <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                              <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                            </svg>
+                            tc@roersoppers.nl
+                          </a>
+                          <a
+                            href="mailto:trainers@roersoppers.nl"
+                            className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              className="w-4 h-4 mr-1"
+                            >
+                              <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                              <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                            </svg>
+                            trainers@roersoppers.nl
+                          </a>
+                        </div>
+                      </li>
+                      <li className="flex flex-col p-2 hover:bg-blue-50 rounded-md transition-colors">
+                        <span className="font-semibold text-base sm:text-lg">
+                          Joep Thewissen
+                        </span>
+                        <span className="text-gray-600 text-sm">
+                          Penningmeester
+                        </span>
+                        <a
+                          href="mailto:penningmeester@roersoppers.nl"
+                          className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="w-4 h-4 mr-1"
+                          >
+                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                          </svg>
+                          penningmeester@roersoppers.nl
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul className="space-y-4">
+                      <li className="flex flex-col p-2 hover:bg-blue-50 rounded-md transition-colors">
+                        <span className="font-semibold text-base sm:text-lg">
+                          Jeroen Meuleners
+                        </span>
+                        <span className="text-gray-600 text-sm">
+                          Algemeen lid en basisinformatie
+                        </span>
+                        <a
+                          href="mailto:info@roersoppers.nl"
+                          className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="w-4 h-4 mr-1"
+                          >
+                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                          </svg>
+                          info@roersoppers.nl
+                        </a>
+                      </li>
+                      <li className="flex flex-col p-2 hover:bg-blue-50 rounded-md transition-colors">
+                        <span className="font-semibold text-base sm:text-lg">
+                          Saskia Ramakers
+                        </span>
+                        <span className="text-gray-600 text-sm">
+                          Algemeen lid en pr zaken
+                        </span>
+                        <a
+                          href="mailto:pr@roersoppers.nl"
+                          className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="w-4 h-4 mr-1"
+                          >
+                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                          </svg>
+                          pr@roersoppers.nl
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 sm:mt-8">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 pb-2 border-b border-gray-200">
+                  Boekhouding en Ledenadministratie
+                </h3>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  <div className="p-2 hover:bg-blue-50 rounded-md transition-colors">
+                    <span className="font-semibold text-base sm:text-lg block">
+                      Marleen Schmitz
+                    </span>
+                    <a
+                      href="mailto:admin@roersoppers.nl"
+                      className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="w-4 h-4 mr-1"
+                      >
+                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                      </svg>
+                      admin@roersoppers.nl
+                    </a>
+                  </div>
+                  <div className="p-2 hover:bg-blue-50 rounded-md transition-colors">
+                    <span className="font-semibold text-base sm:text-lg block">
+                      Nicole Janssen
+                    </span>
+                    <a
+                      href="mailto:admin@roersoppers.nl"
+                      className="text-[#3b82f6] hover:underline text-sm mt-1 inline-flex items-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="w-4 h-4 mr-1"
+                      >
+                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                      </svg>
+                      admin@roersoppers.nl
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="space-y-6">
+                <div className="rounded-xl bg-gray-50/50 p-4 sm:p-6 md:p-8 shadow-sm">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 pb-2 border-b border-gray-200">
+                    Trainers
+                  </h3>
+                  <p className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
+                    Bij De Roersoppers zetten onze trainers zich in om elke
+                    zwemmer uit te dagen en te motiveren. Beginnende zwemmers
+                    krijgen een solide basis, terwijl ervaren zwemmers worden
+                    geholpen om hun techniek en prestaties te verfijnen.
+                    Iedereen traint op zijn eigen niveau, met de juiste balans
+                    tussen plezier en uitdaging.
+                  </p>
+
+                  <div className="mb-3 sm:mb-4 text-base font-semibold">
+                    Dit zijn onze trainers:
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {/*
+                      "Charles Bos",
+                      "Arno Schrauwen",
+                      "Ernest Smit",
+                      "Koen Wijnands",
+                      "Senna Bongartz",
+                      "Mike Jansen",
+                      "Marco Moers",
+                      "René Zenden",
+                      "Loes Slebe",
+                      "Eva Wassenberg",
+                      "Jules Gripling",
+                      "Max Martens",
+                    */}
+                    {Array.from({ length: 12 }, (_, i) => (
+                      <span
+                        key={i}
+                        className="bg-blue-50 px-2 py-1 rounded-md text-sm inline-block"
+                      >
+                        Trainer {i + 1}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-4 sm:mt-6">
+                    <p className="text-gray-700 text-sm">
+                      Heb je een vraag aan een van onze trainers, mail dan naar:
+                    </p>
+                    <a
+                      href="mailto:trainers@roersoppers.nl"
+                      className="text-[#3b82f6] font-semibold hover:underline text-sm mt-1 inline-flex items-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="w-4 h-4 mr-1"
+                      >
+                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                      </svg>
+                      trainers@roersoppers.nl
+                    </a>
+                  </div>
+                </div>
+
+                <div className="p-4 sm:p-6 bg-blue-50 rounded-xl shadow-sm">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-6 h-6 mr-2 text-[#1d4ed8]"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    CODE BLAUW
+                  </h3>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div>
+                      <p className="text-gray-700 text-sm sm:text-base">
+                        Code Blauw staat voor respect, sportiviteit, veiligheid
+                        en plezier in de zwemsport. Het is een initiatief van de
+                        KNZB waarbij zwemverenigingen en zwembaden samen zorgen
+                        voor een sportief en veilig zwemklimaat.
+                      </p>
+                      <div className="mt-3 sm:mt-4">
+                        <Button
+                          className="bg-[#3b82f6] text-white hover:bg-[#1d4ed8] text-sm py-2 h-auto w-full sm:w-auto"
+                          asChild
+                        >
+                          <a
+                            href="https://www.knzb.nl/vereniging__wedstrijdsport/bruisend_verenigingsleven/een_veilige_sportomgeving/code_blauw/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center"
+                          >
+                            Bezoek de KNZB Code Blauw pagina
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              className="ml-2 h-3 w-3 sm:h-4 sm:w-4"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M15.75 2.25H21a.75.75 0 01.75.75v5.25a.75.75 0 01-1.5 0V4.81L8.03 17.03a.75.75 0 01-1.06-1.06L19.19 3.75h-3.44a.75.75 0 010-1.5z"
+                                clipRule="evenodd"
+                              />
+                              <path
+                                fillRule="evenodd"
+                                d="M10.5 6a.75.75 0 01.75.75v10.5c0 .414.336.75.75.75h10.5a.75.75 0 010 1.5H12a2.25 2.25 0 01-2.25-2.25V6.75A.75.75 0 0110.5 6z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-gray-700 mt-2 text-sm sm:text-base">
+                        In het kader van Code Blauw heeft onze vereniging tevens
+                        een vertrouwenspersoon aangesteld. De vertrouwenspersoon
+                        is er voor de eerste opvang van vragen, vermoedens,
+                        meldingen, klachten en aangifte van seksuele intimidatie
+                        en ander ongewenst gedrag voor leden, ouders van leden,
+                        trainers, vrijwilligers en bestuur.
+                      </p>
+                      <p className="text-gray-700 mt-2 font-semibold text-sm sm:text-base">
+                        Momenteel zijn wij op zoek naar een nieuwe
+                        vertrouwenscontactpersoon. Mensen die hiervoor
+                        belangstelling hebben kunnen zich melden bij onze
+                        voorzitter.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Startgemeenschap Section */}
       <section className="container py-12">
         <div className="rounded-xl bg-white p-8 shadow-lg">
