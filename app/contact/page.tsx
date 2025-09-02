@@ -55,172 +55,218 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="w-full py-12">
+      <section className="w-full py-16 bg-gradient-to-br from-gray-50 to-blue-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
-            {/* Contact Form */}
-            <div className="relative overflow-hidden rounded-xl bg-white shadow-lg w-full">
-              <div className="p-6 sm:p-8 w-full">
-                <div className="mb-8 w-full">
-                  <h2 className="text-2xl font-bold text-gray-900">
-                    Stuur ons een bericht
-                  </h2>
-                  <p className="mt-2 text-gray-600">
-                    Vul het formulier in en we nemen zo snel mogelijk contact
-                    met u op.
-                  </p>
-                </div>
-                <form className="space-y-5 w-full">
-                  <div className="grid gap-6 sm:grid-cols-2 w-full">
-                    <div className="w-full">
-                      <label
-                        htmlFor="name"
-                        className="mb-2 block text-sm font-medium text-gray-900"
-                      >
-                        Naam
-                      </label>
-                      <Input
-                        id="name"
-                        placeholder="Uw naam"
-                        required
-                        className="h-12 w-full border-gray-200 bg-gray-50/50 px-4 placeholder:text-gray-500"
-                      />
-                    </div>
-                    <div className="w-full">
-                      <label
-                        htmlFor="email"
-                        className="mb-2 block text-sm font-medium text-gray-900"
-                      >
-                        E-mail
-                      </label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="uw@email.nl"
-                        required
-                        className="h-12 w-full border-gray-200 bg-gray-50/50 px-4 placeholder:text-gray-500"
-                      />
-                    </div>
+          {/* Main Contact Content */}
+          <div className="grid gap-16 lg:grid-cols-5">
+            {/* Contact Form - Takes up 3 columns */}
+            <div className="lg:col-span-3">
+              <div className="relative overflow-hidden rounded-2xl bg-white shadow-xl border border-gray-100">
+                <div className="relative p-8 lg:p-12">
+                  <div className="mb-10">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                      Stuur ons een bericht
+                    </h2>
+                    <p className="text-gray-600 text-lg">
+                      Vul het formulier in en we nemen zo snel mogelijk contact
+                      met u op.
+                    </p>
                   </div>
-                  <div className="w-full">
-                    <label
-                      htmlFor="subject"
-                      className="mb-2 block text-sm font-medium text-gray-900"
-                    >
-                      Onderwerp
-                    </label>
-                    <Input
-                      id="subject"
-                      placeholder="Waar gaat uw bericht over?"
-                      required
-                      className="h-12 w-full border-gray-200 bg-gray-50/50 px-4 placeholder:text-gray-500"
-                    />
-                  </div>
-                  <div className="w-full">
-                    <label
-                      htmlFor="message"
-                      className="mb-2 block text-sm font-medium text-gray-900"
-                    >
-                      Bericht
-                    </label>
-                    <Textarea
-                      id="message"
-                      placeholder="Schrijf uw bericht hier..."
-                      required
-                      className="min-h-[180px] resize-none border-gray-200 bg-gray-50/50 w-full px-4 py-3 placeholder:text-gray-500"
-                    />
-                  </div>
-                  <Button className="h-12 w-full bg-[#3b82f6] text-white hover:bg-[#1d4ed8] transition-colors flex items-center justify-center">
-                    <Send className="mr-2 h-5 w-5" />
-                    Verstuur bericht
-                  </Button>
-                </form>
-              </div>
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-8 w-full">
-              <div className="rounded-xl bg-white p-6 sm:p-8 shadow-lg w-full">
-                <h3 className="mb-6 text-xl font-bold text-gray-900">
-                  Contactgegevens
-                </h3>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-[#3b82f6]/10 p-3">
-                      <MapPin className="h-6 w-6 text-[#3b82f6]" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-900">Locatie</p>
-                      <p className="mt-1 text-gray-600">
-                        LACO Feel Fit Centrum
-                        <br />
-                        Melick
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-[#3b82f6]/10 p-3">
-                      <Mail className="h-6 w-6 text-[#3b82f6]" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-900">E-mail</p>
-                      <p className="mt-1 text-gray-600">info@roersoppers.nl</p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        Ledenadministratie: admin@roersoppers.nl
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-[#3b82f6]/10 p-3">
-                      <div className="h-6 w-6 text-[#3b82f6] flex items-center justify-center font-bold">
-                        €
+                  <form className="space-y-6">
+                    <div className="grid gap-6 sm:grid-cols-2">
+                      <div>
+                        <label
+                          htmlFor="name"
+                          className="mb-3 block text-sm font-semibold text-gray-900"
+                        >
+                          Naam
+                        </label>
+                        <Input
+                          id="name"
+                          placeholder="Uw naam"
+                          required
+                          className="h-14 border-gray-200 bg-white px-4 placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="email"
+                          className="mb-3 block text-sm font-semibold text-gray-900"
+                        >
+                          E-mail
+                        </label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="uw@email.nl"
+                          required
+                          className="h-14 border-gray-200 bg-white px-4 placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                        />
                       </div>
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900">Bankgegevens</p>
-                      <p className="mt-1 text-gray-600">
-                        IBAN: NL66RABO0121496120
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-[#3b82f6]/10 p-3">
-                      <Clock className="h-6 w-6 text-[#3b82f6]" />
+                      <label
+                        htmlFor="subject"
+                        className="mb-3 block text-sm font-semibold text-gray-900"
+                      >
+                        Onderwerp
+                      </label>
+                      <Input
+                        id="subject"
+                        placeholder="Waar gaat uw bericht over?"
+                        required
+                        className="h-14 border-gray-200 bg-white px-4 placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                      />
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900">
-                        Trainingstijden
-                      </p>
-                      <p className="mt-1 text-gray-600">
-                        Maandag: 18:30 - 20:00
-                        <br />
-                        Dinsdag: 18:30 - 20:30
-                        <br />
-                        Woensdag: 18:30 - 20:00
-                        <br />
-                        Donderdag: 18:30 - 22:30
-                        <br />
-                        Zaterdag: 08:00 - 09:00, 12:00 - 13:15
-                      </p>
+                      <label
+                        htmlFor="message"
+                        className="mb-3 block text-sm font-semibold text-gray-900"
+                      >
+                        Bericht
+                      </label>
+                      <Textarea
+                        id="message"
+                        placeholder="Schrijf uw bericht hier..."
+                        required
+                        className="min-h-[150px] resize-none border-gray-200 bg-white px-4 py-4 placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                      />
+                    </div>
+                    <Button className="h-14 w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center text-lg font-semibold">
+                      <Send className="mr-3 h-5 w-5" />
+                      Verstuur bericht
+                    </Button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Info - Takes up 2 columns */}
+            <div className="lg:col-span-2 space-y-8">
+              <div className="rounded-2xl bg-white shadow-xl border border-gray-100 p-8">
+                <h3 className="mb-8 text-2xl font-bold text-gray-900">
+                  Contactgegevens
+                </h3>
+                <div className="space-y-8">
+                  <div className="group">
+                    <div className="flex items-start gap-4">
+                      <div className="rounded-xl bg-[#3b82f6]/10 p-3">
+                        <MapPin className="h-6 w-6 text-[#3b82f6]" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900 text-lg mb-1">
+                          Locatie
+                        </p>
+                        <p className="text-gray-600 leading-relaxed">
+                          LACO Feel Fit Centrum
+                          <br />
+                          Melick
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="flex items-start gap-4">
+                      <div className="rounded-xl bg-[#3b82f6]/10 p-3">
+                        <Mail className="h-6 w-6 text-[#3b82f6]" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900 text-lg mb-2">
+                          E-mail
+                        </p>
+                        <a
+                          href="mailto:info@roersoppers.nl"
+                          className="text-blue-600 hover:text-blue-700 font-medium block mb-1 transition-colors"
+                        >
+                          info@roersoppers.nl
+                        </a>
+                        <a
+                          href="mailto:admin@roersoppers.nl"
+                          className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
+                        >
+                          Ledenadministratie: admin@roersoppers.nl
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="flex items-start gap-4">
+                      <div className="rounded-xl bg-[#3b82f6]/10 p-3">
+                        <div className="h-6 w-6 text-[#3b82f6] flex items-center justify-center font-bold text-lg">
+                          €
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900 text-lg mb-1">
+                          Bankgegevens
+                        </p>
+                        <p className="text-gray-600 font-mono">
+                          NL66RABO0121496120
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="flex items-start gap-4">
+                      <div className="rounded-xl bg-[#3b82f6]/10 p-3">
+                        <Clock className="h-6 w-6 text-[#3b82f6]" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900 text-lg mb-3">
+                          Trainingstijden
+                        </p>
+                        <div className="space-y-2 text-gray-600">
+                          <div className="flex justify-between items-center py-1">
+                            <span className="font-medium">Maandag:</span>
+                            <span className="font-mono">18:30 - 20:00</span>
+                          </div>
+                          <div className="flex justify-between items-center py-1">
+                            <span className="font-medium">Dinsdag:</span>
+                            <span className="font-mono">18:30 - 20:30</span>
+                          </div>
+                          <div className="flex justify-between items-center py-1">
+                            <span className="font-medium">Woensdag:</span>
+                            <span className="font-mono">18:30 - 20:00</span>
+                          </div>
+                          <div className="flex justify-between items-center py-1">
+                            <span className="font-medium">Donderdag:</span>
+                            <span className="font-mono">18:30 - 22:30</span>
+                          </div>
+                          <div className="flex justify-between items-center py-1">
+                            <span className="font-medium">Zaterdag:</span>
+                            <span className="font-mono text-sm">
+                              08:00 - 09:00, 12:00 - 13:15
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              {/* Map */}
-              <div className="rounded-xl bg-white p-6 sm:p-8 shadow-lg w-full">
-                <h3 className="mb-6 text-xl font-bold text-gray-900">
+          {/* Map Section */}
+          <div className="mt-16">
+            <div className="rounded-2xl bg-white shadow-xl border border-gray-100 overflow-hidden">
+              <div className="p-8 border-b border-gray-100">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   Locatie
                 </h3>
-                <div className="relative aspect-[4/3] overflow-hidden rounded-lg w-full">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d526.0054355526755!2d6.024000826205162!3d51.16162654689474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0b36d6256c4b5%3A0xda9dce6454d5ad0b!2sFeel%20Fit%20Center%20Roerdalen!5e0!3m2!1snl!2snl!4v1742898912886!5m2!1snl!2snl"
-                    className="absolute inset-0 w-full h-full"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
+                <p className="text-gray-600">Vind ons op de kaart</p>
+              </div>
+              <div className="relative aspect-[16/9] lg:aspect-[21/9]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d526.0054355526755!2d6.024000826205162!3d51.16162654689474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0b36d6256c4b5%3A0xda9dce6454d5ad0b!2sFeel%20Fit%20Center%20Roerdalen!5e0!3m2!1snl!2snl!4v1742898912886!5m2!1snl!2snl"
+                  className="absolute inset-0 w-full h-full"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </div>
@@ -296,7 +342,7 @@ export default function ContactPage() {
           <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
             Veelgestelde vragen
           </h2>
-          <div className="mx-auto max-w-3xl space-y-4">
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
               <details
                 key={index}

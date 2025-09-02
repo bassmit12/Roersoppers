@@ -73,12 +73,12 @@ export default function TrainingPage() {
         </div>
         <div className="container relative z-10 py-12 text-center text-white">
           <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
-            Trainingstijden
+            Training & Groepen
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-blue-100">
-            Bekijk hier het complete trainingsschema voor alle groepen. We
-            bieden trainingen aan voor zowel beginners als gevorderden, van jong
-            tot oud.
+            Ontdek welke trainingsgroep bij jou past! Van jeugd tot masters,
+            recreatief of wedstrijdgericht - er is voor iedereen een plek in het
+            water.
           </p>
         </div>
       </section>
@@ -88,8 +88,10 @@ export default function TrainingPage() {
         <div className="rounded-xl bg-white p-6 shadow-lg sm:p-8">
           <div className="mb-8 flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">Weekschema</h2>
-              <p className="text-gray-600">Trainingstijden per groep</p>
+              <h2 className="text-2xl font-bold text-gray-900">
+                Trainingstijden
+              </h2>
+              <p className="text-gray-600">Weekschema voor alle groepen</p>
             </div>
             <Button className="bg-[#1d4ed8] text-white hover:bg-[#1d4ed8]">
               Download Schema
@@ -162,7 +164,7 @@ export default function TrainingPage() {
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
             Onze Trainingsgroepen
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-lg leading-relaxed">
             Zwemmen bij De Roersoppers is voor iedereen: jong en oud, fanatiek
             of recreatief. Of je nu snelheid en techniek wilt verbeteren of
             gewoon lekker wilt bewegen, er is altijd een plek voor jou. Twijfel
@@ -170,102 +172,158 @@ export default function TrainingPage() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              title: "Jeugd Wedstrijd",
-              description:
-                "Voor zwemmers met A-diploma die verder willen! We leren je nieuwe technieken en helpen je steeds beter te worden. Serieuze trainingen worden afgewisseld met plezier, en je zwemt zo'n 10-12 wedstrijden per seizoen. We verwachten minimaal 3 trainingen per week.",
-              colorClass: "bg-blue-400",
-              textClass: "text-white",
-            },
-            {
-              title: "Jeugd Recreatief",
-              description:
-                "Voor zwemmers met A-diploma die vooral plezier zoeken in het water. Je leert nieuwe technieken zonder de druk van wedstrijden. Je traint op je eigen tempo, en deelname aan wedstrijden is optioneel. Plezier en samenspel met leeftijdsgenoten staan voorop!",
-              colorClass: "bg-blue-200",
-              textClass: "text-gray-800",
-            },
-            {
-              title: "Jongeren Wedstrijd",
-              description:
-                "Voor fanatieke zwemmers met passie voor het water. Je traint op techniek, snelheid en conditie, gericht op wedstrijden in districtscompetities en kampioenschappen. Minimaal drie trainingen per week om echt beter te worden. Samen gaan we voor de beste prestaties!",
-              colorClass: "bg-blue-400",
-              textClass: "text-white",
-            },
-            {
-              title: "Jongeren Recreatief",
-              description:
-                "Voor fanatieke jongeren die serieus willen trainen, zonder wedstrijddruk. Je werkt aan techniek, snelheid en conditie in een gezellige en motiverende sfeer. Perfect als je je conditie wilt verbeteren of gewoon plezier beleeft aan intensief zwemmen.",
-              colorClass: "bg-blue-200",
-              textClass: "text-gray-800",
-            },
-            {
-              title: "Wedstrijdmasters",
-              description:
-                "Voor 25-plussers die fanatiek willen blijven zwemmen. Je doet mee aan speciale wedstrijden met leeftijdscategorieën per vijf jaar. Je traint samen met de jeugd om je techniek en snelheid te blijven ontwikkelen. Iedereen die fit genoeg is kan meedoen!",
-              colorClass: "bg-blue-600",
-              textClass: "text-white",
-            },
-            {
-              title: "Masters 1",
-              description:
-                "Conditietraining zonder wedstrijden, in banen op jouw niveau. Perfect voor oud-wedstrijdzwemmers of voor wie technieken wil verbeteren, zoals de borstcrawl. Een baantje overslaan mag, maar er wordt hier wel serieus getraind. Plezier en beweging staan centraal.",
-              colorClass: "bg-blue-600",
-              textClass: "text-white",
-            },
-            {
-              title: "Masters 2",
-              description:
-                "Een gezonde sport, ook als je een jaartje ouder bent! Hier wordt niet alleen flink gezwommen, maar ook veel gelachen. De banen zijn verdeeld op niveau, zodat iedereen in eigen tempo kan trainen. Het zwemtempo ligt iets lager dan bij Masters 1.",
-              colorClass: "bg-blue-600",
-              textClass: "text-white",
-            },
-          ].map((group) => (
-            <div
-              key={group.title}
-              className={`rounded-lg p-6 shadow-lg ${group.colorClass} ${group.textClass}`}
-            >
-              <h3 className="text-xl font-bold mb-2">{group.title}</h3>
-              <p>{group.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        <div className="grid gap-10 lg:grid-cols-3">
+          {/* Jeugd Group */}
+          <div className="group relative rounded-2xl bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg">
+            <div className="relative p-8">
+              <div className="mb-6">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+                  <span className="text-2xl">🏊‍♀️</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Jeugd</h3>
+                <p className="text-sm text-gray-500 uppercase tracking-wide font-semibold">
+                  Voor jonge zwemmers
+                </p>
+              </div>
 
-      {/* Additional Info Section */}
-      <section className="container pb-24">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-xl bg-white p-6 shadow-lg">
-            <h3 className="mb-2 text-xl font-bold text-gray-900">Locatie</h3>
-            <p className="text-gray-600">
-              Alle trainingen vinden plaats in:
-              <br />
-              LACO Feel Fit Centrum
-              <br />
-              Melick
-              <br />
-              <span className="mt-2 block text-sm">
-                Samenwerking met partnerclub ZV Patrick (Echt) sinds 2016-2017
-              </span>
-            </p>
+              <div className="space-y-6">
+                <div className="rounded-xl bg-blue-50 p-4 border-l-4 border-[#1d4ed8]">
+                  <h4 className="font-bold text-blue-900 mb-2 flex items-center gap-2">
+                    <span className="text-lg">🏆</span>
+                    Wedstrijdploeg
+                  </h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Voor zwemmers met A-diploma die verder willen! We leren je
+                    nieuwe technieken en helpen je steeds beter te worden.
+                    Serieuze trainingen worden afgewisseld met plezier, en je
+                    zwemt zo&apos;n 10-12 wedstrijden per seizoen.
+                  </p>
+                  <div className="mt-3 text-xs text-blue-800 font-medium">
+                    • Minimaal 3 trainingen per week • Wedstrijden •
+                    Techniektraining
+                  </div>
+                </div>
+
+                <div className="rounded-xl bg-gray-50 p-4 border-l-4 border-gray-300">
+                  <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                    <span className="text-lg">🎯</span>
+                    Recreatief
+                  </h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Voor zwemmers met A-diploma die vooral plezier zoeken in het
+                    water. Je leert nieuwe technieken zonder de druk van
+                    wedstrijden. Je traint op je eigen tempo, en deelname aan
+                    wedstrijden is optioneel.
+                  </p>
+                  <div className="mt-3 text-xs text-gray-700 font-medium">
+                    • Eigen tempo • Optionele wedstrijden • Plezier voorop
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="rounded-xl bg-white p-6 shadow-lg">
-            <h3 className="mb-2 text-xl font-bold text-gray-900">Vakanties</h3>
-            <p className="text-gray-600">
-              Tijdens schoolvakanties kunnen trainingstijden afwijken. Houd de
-              nieuwsberichten in de gaten voor actuele informatie.
-            </p>
+
+          {/* Jongeren Group */}
+          <div className="group relative rounded-2xl bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg">
+            <div className="relative p-8">
+              <div className="mb-6">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+                  <span className="text-2xl">🏊‍♂️</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  Jongeren
+                </h3>
+                <p className="text-sm text-gray-500 uppercase tracking-wide font-semibold">
+                  Voor tieners & jongvolwassenen
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="rounded-xl bg-blue-50 p-4 border-l-4 border-[#1d4ed8]">
+                  <h4 className="font-bold text-blue-900 mb-2 flex items-center gap-2">
+                    <span className="text-lg">⚡</span>
+                    Wedstrijdploeg
+                  </h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Voor fanatieke zwemmers met passie voor het water. Je traint
+                    op techniek, snelheid en conditie, gericht op wedstrijden in
+                    districtscompetities en kampioenschappen. Samen gaan we voor
+                    de beste prestaties!
+                  </p>
+                  <div className="mt-3 text-xs text-blue-800 font-medium">
+                    • Minimaal 3 trainingen per week • Districtscompetities •
+                    Prestatiegericht
+                  </div>
+                </div>
+
+                <div className="rounded-xl bg-gray-50 p-4 border-l-4 border-gray-300">
+                  <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                    <span className="text-lg">💪</span>
+                    Recreatief
+                  </h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Voor fanatieke jongeren die serieus willen trainen, zonder
+                    wedstrijddruk. Je werkt aan techniek, snelheid en conditie
+                    in een gezellige en motiverende sfeer. Perfect voor
+                    conditieverbetering!
+                  </p>
+                  <div className="mt-3 text-xs text-gray-700 font-medium">
+                    • Geen wedstrijddruk • Conditietraining • Gezellige sfeer
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="rounded-xl bg-white p-6 shadow-lg">
-            <h3 className="mb-2 text-xl font-bold text-gray-900">Vragen?</h3>
-            <p className="mb-4 text-gray-600">
-              Neem contact op met onze trainingscoördinator voor vragen over het
-              trainingsschema.
-            </p>
-            <Button className="w-full bg-[#1d4ed8] text-white hover:bg-[#1d4ed8]">
-              Contact Opnemen
-            </Button>
+
+          {/* Masters Group */}
+          <div className="group relative rounded-2xl bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg">
+            <div className="relative p-8">
+              <div className="mb-6">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+                  <span className="text-2xl">🏊</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  Masters
+                </h3>
+                <p className="text-sm text-gray-500 uppercase tracking-wide font-semibold">
+                  Voor 25+ zwemmers
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="rounded-xl bg-blue-50 p-4 border-l-4 border-[#1d4ed8]">
+                  <h4 className="font-bold text-blue-900 mb-2 flex items-center gap-2">
+                    <span className="text-lg">🏅</span>
+                    Wedstrijdmasters
+                  </h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Voor 25-plussers die fanatiek willen blijven zwemmen. Je
+                    doet mee aan speciale wedstrijden met leeftijdscategorieën
+                    per vijf jaar. Je traint samen met de jeugd om je techniek
+                    en snelheid te blijven ontwikkelen.
+                  </p>
+                  <div className="mt-3 text-xs text-blue-800 font-medium">
+                    • Leeftijdscategorieën • Masters wedstrijden • Techniekfocus
+                  </div>
+                </div>
+
+                <div className="rounded-xl bg-gray-50 p-4 border-l-4 border-gray-300">
+                  <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                    <span className="text-lg">😊</span>
+                    Recreatief
+                  </h4>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Een gezonde sport voor elke leeftijd! Conditietraining
+                    zonder wedstrijden, in banen op jouw niveau. Perfect voor
+                    oud-wedstrijdzwemmers of voor wie technieken wil verbeteren.
+                    Plezier en beweging staan centraal.
+                  </p>
+                  <div className="mt-3 text-xs text-gray-700 font-medium">
+                    • Eigen niveau • Geen wedstrijden • Veel plezier & beweging
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

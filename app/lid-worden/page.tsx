@@ -1,386 +1,343 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Download, Mail } from "lucide-react";
 import { Footer } from "@/components/footer";
+import {
+  FileDown,
+  ClipboardList,
+  CheckCircle2,
+  PenLine,
+  Mail,
+  ArrowRight,
+} from "lucide-react";
 
 export default function MembershipPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative py-12 sm:py-24">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-950 to-blue-900">
+      {/* Hero */}
+      <section className="relative py-16 sm:py-24">
+        <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?w=1800&h=400&fit=crop"
-            alt="Swimming pool"
+            src="/images/hero.jpg"
+            alt="Zwemvereniging De Roersoppers"
             fill
-            className="object-cover opacity-20"
+            priority
+            className="object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 to-blue-900/80" />
         </div>
-        <div className="container relative z-10 py-8 sm:py-12 text-center text-white px-4 sm:px-6">
-          <h1 className="mb-4 text-3xl sm:text-4xl font-bold tracking-tight md:text-5xl">
-            Lid Worden
+        <div className="relative z-10 container px-4 sm:px-6 text-center text-white">
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight">
+            Lid worden
           </h1>
-          <p className="mx-auto max-w-2xl text-base sm:text-lg text-blue-100">
-            Train vier keer mee. Samen kiezen we de beste groep voor jou.
+          <p className="mt-4 mx-auto max-w-2xl text-blue-100 text-base sm:text-lg">
+            Probeer eerst 4 gratis proeftrainingen. Samen vinden we de groep die
+            bij jou past.
           </p>
-        </div>
-      </section>
-
-      {/* How to Join Section */}
-      <section className="py-8 sm:py-16">
-        <div className="container px-4 sm:px-6">
-          <div className="mx-auto max-w-3xl rounded-xl bg-white p-4 sm:p-8 shadow-lg">
-            <div className="mb-6 sm:mb-8">
-              <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-bold text-gray-900">
-                Aanmeldingsprocedure
-              </h2>
-              <div className="space-y-3 sm:space-y-4 text-gray-600 text-sm sm:text-base">
-                <p>
-                  Wil je lid worden van de Roersoppers? Volg dan deze eenvoudige
-                  stappen:
-                </p>
-                <ol className="ml-5 sm:ml-6 list-decimal space-y-3 sm:space-y-4">
-                  <li>
-                    Train vier keer gratis mee om te kijken of het je bevalt.
-                    Onze trainers helpen je om de beste groep voor jou te
-                    kiezen.
-                  </li>
-                  <li>
-                    Ben je overtuigd? Download het aanmeldingsformulier via de
-                    knop hieronder.
-                  </li>
-                  <li>
-                    Vul het formulier volledig in en voorzie het van een
-                    handtekening. Bij leden onder 18 jaar dienen ouders of
-                    verzorgers te tekenen.
-                  </li>
-                  <li>
-                    Mail het ingevulde formulier naar{" "}
-                    <a
-                      href="mailto:voorzitter@roersoppers.nl"
-                      className="text-blue-600 hover:underline"
-                    >
-                      voorzitter@roersoppers.nl
-                    </a>{" "}
-                    of geef het uitgeprint aan je trainer.
-                  </li>
-                </ol>
-              </div>
-            </div>
-
-            <Button className="flex w-full items-center justify-center gap-2 bg-[#3b82f6] text-white hover:bg-[#1d4ed8] py-3 text-base sm:w-auto">
-              <Download className="h-4 w-4 sm:h-5 sm:w-5" />
-              Download Aanmeldingsformulier
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Button
+              asChild
+              className="h-11 sm:h-12 px-5 sm:px-6 bg-[#3b82f6] hover:bg-[#1d4ed8]"
+            >
+              <a
+                href="/aanmeldingsformulier.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download aanmeldingsformulier (PDF)"
+              >
+                <FileDown className="mr-2" />
+                Download aanmeldingsformulier
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="h-11 sm:h-12 px-5 sm:px-6 bg-white text-[#1d4ed8] border-2 border-[#1d4ed8] hover:bg-[#1d4ed8] hover:text-white"
+            >
+              <Link href="/contact" aria-label="Ga naar contactpagina">
+                <Mail className="mr-2" />
+                Stel een vraag
+              </Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Membership Rules Section */}
-      <section className="py-8 sm:py-16 bg-gray-50">
+      {/* Steps */}
+      <section className="py-10 sm:py-16">
         <div className="container px-4 sm:px-6">
-          <div className="mx-auto max-w-3xl mb-6 sm:mb-12">
-            <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold text-gray-900 text-center">
-              Aanmeld- en Afmeldregels
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              Zo werkt het
             </h2>
+            <p className="mt-3 text-gray-600">
+              Aanmelden is eenvoudig. Volg de stappen hieronder.
+            </p>
           </div>
-
-          <div className="mx-auto max-w-3xl rounded-xl bg-white p-4 sm:p-8 shadow-lg mb-6 sm:mb-8">
-            <h3 className="mb-3 sm:mb-4 text-lg sm:text-xl font-semibold text-gray-900">
-              Aanmeldingsregels
-            </h3>
-            <div className="space-y-3 sm:space-y-4 text-gray-600 text-sm sm:text-base">
-              <p>
-                Nieuwe leden dienen zich via een aanmeldingsformulier (voor de
-                duur van minimaal één jaar) aan te melden. Aanmelding van nieuwe
-                leden kan alleen plaatsvinden tegelijk met afgifte van een
-                machtiging tot incasso voor de verschuldigde contributie.
+          <div className="mt-8 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-xl bg-white p-5 shadow border border-gray-100">
+              <div className="flex items-center gap-3">
+                <CheckCircle2 className="text-[#3b82f6]" />
+                <p className="font-semibold text-gray-900">Proeftrainen</p>
+              </div>
+              <p className="mt-2 text-sm text-gray-600">
+                Train 4 keer gratis mee en ontdek welke groep bij je past.
               </p>
-              <p>
-                Betaling van de contributie kan alleen middels afgifte van een
-                incasso-machtiging. De leden ontvangen geen voorafgaande melding
-                van de contributie. De actuele contributiebedragen zijn
-                hieronder te raadplegen.
+            </div>
+            <div className="rounded-xl bg-white p-5 shadow border border-gray-100">
+              <div className="flex items-center gap-3">
+                <ClipboardList className="text-[#3b82f6]" />
+                <p className="font-semibold text-gray-900">Formulier</p>
+              </div>
+              <p className="mt-2 text-sm text-gray-600">
+                Download en vul het aanmeldingsformulier volledig in.
               </p>
-              <p>
-                Bij de leden onder de 18 jaar dienen de ouders of verzorgers het
-                aanmeldingsformulier te ondertekenen. Deze
-                aanmeldingsformulieren zijn tijdens de trainingsdagen in het
-                zwembad aanwezig of kunt u via de link downloaden.
+            </div>
+            <div className="rounded-xl bg-white p-5 shadow border border-gray-100">
+              <div className="flex items-center gap-3">
+                <PenLine className="text-[#3b82f6]" />
+                <p className="font-semibold text-gray-900">Ondertekenen</p>
+              </div>
+              <p className="mt-2 text-sm text-gray-600">
+                Handtekening vereist. Voor -18 jaar: ondertekenen door ouder/verzorger.
+              </p>
+            </div>
+            <div className="rounded-xl bg-white p-5 shadow border border-gray-100">
+              <div className="flex items-center gap-3">
+                <Mail className="text-[#3b82f6]" />
+                <p className="font-semibold text-gray-900">Insturen</p>
+              </div>
+              <p className="mt-2 text-sm text-gray-600">
+                Mail naar
+                {" "}
+                <a className="text-blue-600 hover:underline" href="mailto:voorzitter@roersoppers.nl">
+                  voorzitter@roersoppers.nl
+                </a>
+                {" "}
+                of lever in bij je trainer.
               </p>
             </div>
           </div>
+          <div className="mt-6 text-center">
+            <Button
+              asChild
+              className="h-11 px-5 bg-[#3b82f6] hover:bg-[#1d4ed8]"
+            >
+              <a
+                href="/aanmeldingsformulier.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download aanmeldingsformulier (PDF)"
+              >
+                <FileDown className="mr-2" /> Download aanmeldingsformulier
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
 
-          <div className="mx-auto max-w-3xl rounded-xl bg-white p-4 sm:p-8 shadow-lg">
-            <h3 className="mb-3 sm:mb-4 text-lg sm:text-xl font-semibold text-gray-900">
-              Opzegregels
-            </h3>
-            <div className="space-y-3 sm:space-y-4 text-gray-600 text-sm sm:text-base">
-              <p>Opzegging lidmaatschap kan via mail of brief:</p>
-              <p>
-                E-mail:{" "}
-                <a
-                  href="mailto:voorzitter@roersoppers.nl"
-                  className="text-blue-600 hover:underline"
-                >
-                  voorzitter@roersoppers.nl
-                </a>{" "}
-                of een uitgeprinte brief afgeven tijdens een training.
-              </p>
-              <p>
-                Opzegging is altijd mogelijk zonder verdere kosten als dit
-                tijdig plaatsvindt d.w.z.:
-              </p>
-              <ul className="ml-5 sm:ml-6 list-disc space-y-2">
-                <li>
-                  per 1 november voor wat betreft de senioren (zij betalen
-                  namelijk maar 1 maal per jaar)
-                </li>
-                <li>
-                  per 1 november of 1 juli voor wat betreft overige leden.
-                </li>
-              </ul>
-              <p>
-                Wordt er niet tijdig afgemeld, dan worden in rekening gebracht:
-              </p>
-              <ul className="ml-5 sm:ml-6 list-disc space-y-2">
-                <li>de kosten van lidmaatschapsmelding aan de KNZB</li>
-                <li>
-                  de contributie voor elke maand of deel van de maand dat het
-                  lidmaatschap heeft geduurd.
-                </li>
-              </ul>
-              <p>
-                Bij ziekte wordt de contributiebetaling alleen opgeschort als de
-                ziekte tijdig is gemeld en langer dan 3 maanden duurt.
-              </p>
-              <p>
-                Bij te late afmelding worden de kosten van de startvergunning
-                alsnog doorberekend.
-              </p>
-              <p>
-                Voor aanmeldingen gelden dezelfde uitgangspunten voor wat
-                betreft de contributie die in rekening wordt gebracht.
-              </p>
+      {/* Rules */}
+      <section className="py-10 sm:py-16 bg-white">
+        <div className="container px-4 sm:px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              Aanmeld- en opzegregels
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div className="rounded-xl bg-gray-50 p-6 shadow border border-gray-100">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+                Aanmeldingsregels
+              </h3>
+              <div className="mt-3 space-y-3 text-sm sm:text-base text-gray-700">
+                <p>
+                  Aanmelden kan met het aanmeldingsformulier voor minimaal één jaar.
+                </p>
+                <p>
+                  Betaling uitsluitend via incasso-machtiging. Contributiebedragen vind je hieronder.
+                </p>
+                <p>
+                  Bij leden onder 18 jaar ondertekenen ouders/verzorgers het formulier.
+                </p>
+              </div>
+            </div>
+            <div className="rounded-xl bg-gray-50 p-6 shadow border border-gray-100">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+                Opzegregels
+              </h3>
+              <div className="mt-3 space-y-3 text-sm sm:text-base text-gray-700">
+                <p>Opzeggen kan per e-mail of brief:</p>
+                <p>
+                  E-mail:{" "}
+                  <a className="text-blue-600 hover:underline" href="mailto:voorzitter@roersoppers.nl">
+                    voorzitter@roersoppers.nl
+                  </a>
+                  {" "}of lever een brief in tijdens de training.
+                </p>
+                <ul className="ml-5 list-disc space-y-1">
+                  <li>Senioren: vóór 1 november</li>
+                  <li>Overige leden: vóór 1 juli of 1 november</li>
+                </ul>
+                <p>Niet tijdig afgemeld? Dan berekenen we:</p>
+                <ul className="ml-5 list-disc space-y-1">
+                  <li>Kosten KNZB-lidmaatschapsmelding</li>
+                  <li>Contributie per (gedeelte van de) maand</li>
+                </ul>
+                <p>
+                  Bij ziekte wordt contributie alleen opgeschort als dit tijdig is gemeld en langer dan 3 maanden duurt.
+                </p>
+                <p>Bij te late afmelding worden startvergunningskosten doorberekend.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contribution Structure Section */}
-      <section className="py-8 sm:py-16 bg-white">
+      {/* Contribution */}
+      <section className="py-10 sm:py-16 bg-gray-50">
         <div className="container px-4 sm:px-6">
-          <div className="mx-auto max-w-3xl mb-6 sm:mb-12">
-            <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold text-gray-900 text-center">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
               Contributiestructuur 2025-2026
             </h2>
           </div>
 
-          <div className="mx-auto max-w-3xl rounded-xl bg-gray-50 p-4 sm:p-8 shadow-lg mb-6 sm:mb-8">
-            <h3 className="mb-3 sm:mb-4 text-lg sm:text-xl font-semibold text-gray-900">
-              KNZB Bijdragen
+          <div className="mt-8 mx-auto max-w-3xl rounded-xl bg-white p-6 shadow border border-gray-100">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+              KNZB-bijdragen
             </h3>
-            <ul className="space-y-2 text-gray-600 text-sm sm:text-base">
+            <ul className="mt-3 space-y-2 text-sm sm:text-base text-gray-700">
               <li>
-                <span className="font-medium">
-                  Verplichte bijdrage voor iedere zwemmer:
-                </span>{" "}
-                €25,40 (zit in de lidmaatschapsprijs)
+                <span className="font-medium">Verplichte bijdrage voor iedere zwemmer:</span> €25,40 (in lidmaatschap)
               </li>
               <li>
-                <span className="font-medium">
-                  Startvergunning &lt; 12 jaar:
-                </span>{" "}
-                €2,30 per zwemmer
+                <span className="font-medium">Startvergunning &lt; 12 jaar:</span> €2,30 per zwemmer
               </li>
               <li>
-                <span className="font-medium">
-                  Startvergunning &gt; 12 jaar:
-                </span>{" "}
-                €44,80 per zwemmer
+                <span className="font-medium">Startvergunning &gt; 12 jaar:</span> €44,80 per zwemmer
               </li>
             </ul>
           </div>
 
-          <div className="mx-auto max-w-3xl">
-            <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-              <div className="rounded-xl bg-gray-50 p-4 sm:p-6 shadow-lg">
-                <h3 className="mb-3 sm:mb-4 text-lg sm:text-xl font-semibold text-gray-900">
-                  Tarieven Niet-wedstrijdzwemmers
-                </h3>
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="rounded-lg bg-blue-50 p-3 sm:p-4">
-                    <h4 className="font-medium text-gray-900">
-                      Masters 2 (zwemmen 1x per week)
-                    </h4>
-                    <p className="mt-1 text-gray-600 text-sm sm:text-base">
-                      €130,– per jaar (Exclusief startvergunning)
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-500">
-                      betaling per jaar in maart
-                    </p>
-                  </div>
-
-                  <div className="rounded-lg bg-blue-50 p-3 sm:p-4">
-                    <h4 className="font-medium text-gray-900">
-                      Masters 1 (zwemmen max 3x per week)
-                    </h4>
-                    <p className="mt-1 text-gray-600 text-sm sm:text-base">
-                      €217,– per jaar (Exclusief startvergunning)
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-500">
-                      betaling per halfjaar maart en september
-                    </p>
-                  </div>
-
-                  <div className="rounded-lg bg-blue-50 p-3 sm:p-4">
-                    <h4 className="font-medium text-gray-900">
-                      Jeugd Recreatief (zwemmen max 3x per week)
-                    </h4>
-                    <p className="mt-1 text-gray-600 text-sm sm:text-base">
-                      €254,– per jaar (Exclusief startvergunning)
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-500">
-                      betaling per halfjaar maart en september
-                    </p>
-                  </div>
-
-                  <div className="rounded-lg bg-blue-50 p-3 sm:p-4">
-                    <h4 className="font-medium text-gray-900">
-                      Jongeren Recreatief (zwemmen max 4x per week)
-                    </h4>
-                    <p className="mt-1 text-gray-600 text-sm sm:text-base">
-                      €290,– per jaar (Exclusief startvergunning)
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-500">
-                      betaling per halfjaar maart en september
-                    </p>
-                  </div>
-
-                  <div className="rounded-lg bg-blue-50 p-3 sm:p-4">
-                    <h4 className="font-medium text-gray-900">
-                      Studenten uitwonend (zwemmen max 1x per week)
-                    </h4>
-                    <p className="mt-1 text-gray-600 text-sm sm:text-base">
-                      €90,– per jaar (Exclusief startvergunning)
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-500">
-                      betaling per jaar maart en september
-                    </p>
-                  </div>
-
-                  <div className="rounded-lg bg-blue-100 p-3 sm:p-4 text-xs sm:text-sm">
-                    <strong>Studentenregeling:</strong> Studerende leden die op
-                    kamers wonen, op meer dan 30 km vanaf Melick, kunnen gebruik
-                    maken van de studentenregeling. Dit houdt in dat zij lid
-                    kunnen blijven van de vereniging.
-                  </div>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <div className="rounded-xl bg-white p-6 shadow border border-gray-100">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+                Niet-wedstrijdzwemmers
+              </h3>
+              <div className="mt-3 space-y-4 text-gray-700 text-sm sm:text-base">
+                <div className="rounded-lg bg-blue-50 p-4">
+                  <p className="font-medium text-gray-900">Masters 2 (1x per week)</p>
+                  <p>€130 per jaar (excl. startvergunning)</p>
+                  <p className="text-xs text-gray-500">betaling per jaar in maart</p>
                 </div>
-              </div>
-
-              <div className="rounded-xl bg-gray-50 p-4 sm:p-6 shadow-lg">
-                <h3 className="mb-3 sm:mb-4 text-lg sm:text-xl font-semibold text-gray-900">
-                  Tarieven Wedstrijdzwemmers
-                </h3>
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="rounded-lg bg-blue-100 p-3 sm:p-4">
-                    <h4 className="font-medium text-gray-900">
-                      Wedstrijdmasters (zwemmen max 4x per week)
-                    </h4>
-                    <p className="mt-1 text-gray-600 text-sm sm:text-base">
-                      €290,– per jaar (Inclusief startvergunning)
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-500">
-                      betaling per halfjaar maart en september
-                    </p>
-                  </div>
-
-                  <div className="rounded-lg bg-blue-100 p-3 sm:p-4">
-                    <h4 className="font-medium text-gray-900">
-                      Jeugd Wedstrijd (zwemmen max 3x per week)
-                    </h4>
-                    <p className="mt-1 text-gray-600 text-sm sm:text-base">
-                      €254,– per jaar (Inclusief startvergunning)
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-500">
-                      betaling per halfjaar maart en september
-                    </p>
-                  </div>
-
-                  <div className="rounded-lg bg-blue-100 p-3 sm:p-4">
-                    <h4 className="font-medium text-gray-900">
-                      Jongeren Wedstrijd (zwemmen max 4x per week)
-                    </h4>
-                    <p className="mt-1 text-gray-600 text-sm sm:text-base">
-                      €290,– per jaar (Inclusief startvergunning)
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-500">
-                      betaling per halfjaar maart en september
-                    </p>
-                  </div>
-
-                  <div className="mt-4 sm:mt-6 rounded-lg bg-blue-200 p-3 sm:p-4">
-                    <h4 className="font-medium text-gray-900">
-                      Gezinskortingen
-                    </h4>
-                    <ul className="mt-1 sm:mt-2 space-y-1 text-gray-600 text-xs sm:text-sm">
-                      <li>2e betalende gezinslid: €2,00</li>
-                      <li>3e en volgende betalende gezinslid: €4,00</li>
-                    </ul>
-                  </div>
+                <div className="rounded-lg bg-blue-50 p-4">
+                  <p className="font-medium text-gray-900">Masters 1 (max 3x per week)</p>
+                  <p>€217 per jaar (excl. startvergunning)</p>
+                  <p className="text-xs text-gray-500">betaling per halfjaar: maart en september</p>
+                </div>
+                <div className="rounded-lg bg-blue-50 p-4">
+                  <p className="font-medium text-gray-900">Jeugd Recreatief (max 3x per week)</p>
+                  <p>€254 per jaar (excl. startvergunning)</p>
+                  <p className="text-xs text-gray-500">betaling per halfjaar: maart en september</p>
+                </div>
+                <div className="rounded-lg bg-blue-50 p-4">
+                  <p className="font-medium text-gray-900">Jongeren Recreatief (max 4x per week)</p>
+                  <p>€290 per jaar (excl. startvergunning)</p>
+                  <p className="text-xs text-gray-500">betaling per halfjaar: maart en september</p>
+                </div>
+                <div className="rounded-lg bg-blue-50 p-4">
+                  <p className="font-medium text-gray-900">Studenten uitwonend (max 1x per week)</p>
+                  <p>€90 per jaar (excl. startvergunning)</p>
+                  <p className="text-xs text-gray-500">betaling per jaar in maart en september</p>
+                </div>
+                <div className="rounded-lg bg-blue-100 p-4 text-xs sm:text-sm">
+                  <strong>Studentenregeling:</strong> Woon je op kamers op &gt; 30 km van Melick? Dan kun je lid blijven van de vereniging.
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 sm:mt-8 rounded-xl bg-white border border-gray-200 p-4 sm:p-6">
-              <p className="text-gray-600 text-sm sm:text-base">
-                In het kader van onze samenwerking met Z.V. Patrick binnen de
-                Startgemeenschap Patrick-de Roersoppers zijn de tarieven van ZV
-                de Roersoppers deels afgestemd met/op die van Z.V. Patrick (vnl.
-                voor de wedstrijdzwemmers) Voor het overige blijven er
-                verschillen in de tarieven van beide verenigingen.
-              </p>
-              <p className="mt-3 sm:mt-4 text-gray-600 text-sm sm:text-base">
-                Nadere inlichtingen kunnen worden ingewonnen bij de
-                ledenadministratie e-mail{" "}
-                <a
-                  href="mailto:admin@roersoppers.nl"
-                  className="text-blue-600 hover:underline"
-                >
-                  admin@roersoppers.nl
-                </a>
-              </p>
-              <p className="mt-3 sm:mt-4 text-gray-800 font-medium text-sm sm:text-base">
-                Het rekeningnummer van de zwemclub is IBAN NL66RABO012.14.96.120
-              </p>
+            <div className="rounded-xl bg-white p-6 shadow border border-gray-100">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+                Wedstrijdzwemmers
+              </h3>
+              <div className="mt-3 space-y-4 text-gray-700 text-sm sm:text-base">
+                <div className="rounded-lg bg-blue-100 p-4">
+                  <p className="font-medium text-gray-900">Wedstrijdmasters (max 4x per week)</p>
+                  <p>€290 per jaar (incl. startvergunning)</p>
+                  <p className="text-xs text-gray-500">betaling per halfjaar: maart en september</p>
+                </div>
+                <div className="rounded-lg bg-blue-100 p-4">
+                  <p className="font-medium text-gray-900">Jeugd Wedstrijd (max 3x per week)</p>
+                  <p>€254 per jaar (incl. startvergunning)</p>
+                  <p className="text-xs text-gray-500">betaling per halfjaar: maart en september</p>
+                </div>
+                <div className="rounded-lg bg-blue-100 p-4">
+                  <p className="font-medium text-gray-900">Jongeren Wedstrijd (max 4x per week)</p>
+                  <p>€290 per jaar (incl. startvergunning)</p>
+                  <p className="text-xs text-gray-500">betaling per halfjaar: maart en september</p>
+                </div>
+                <div className="rounded-lg bg-blue-200 p-4">
+                  <p className="font-medium text-gray-900">Gezinskortingen</p>
+                  <ul className="mt-1 text-xs sm:text-sm text-gray-700 space-y-1">
+                    <li>2e betalende gezinslid: €2,00</li>
+                    <li>3e en volgende betalende gezinslid: €4,00</li>
+                  </ul>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div className="mt-6 mx-auto max-w-3xl rounded-xl bg-white border border-gray-200 p-6">
+            <p className="text-gray-600 text-sm sm:text-base">
+              Binnen de Startgemeenschap Patrick–De Roersoppers zijn de tarieven deels afgestemd met Z.V. Patrick (m.n. wedstrijdzwemmers). Verder kunnen verschillen voorkomen.
+            </p>
+            <p className="mt-3 text-gray-600 text-sm sm:text-base">
+              Vragen? Mail de ledenadministratie:{" "}
+              <a href="mailto:admin@roersoppers.nl" className="text-blue-600 hover:underline">admin@roersoppers.nl</a>
+            </p>
+            <p className="mt-3 text-gray-800 font-medium text-sm sm:text-base">
+              Bankrekening: IBAN NL66RABO012.14.96.120
+            </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative overflow-hidden bg-blue-900 py-10 sm:py-16 text-white">
+      {/* CTA */}
+      <section className="relative overflow-hidden bg-blue-900 py-12 sm:py-16 text-white">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-blue-950" />
-        <div className="container relative z-10 px-4 sm:px-6">
+        <div className="relative container px-4 sm:px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-3 sm:mb-4 text-2xl sm:text-3xl font-bold md:text-4xl">
-              Klaar om te beginnen?
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+              Klaar om te starten?
             </h2>
-            <p className="mb-6 sm:mb-8 text-blue-200 text-sm sm:text-base">
-              Volg vier gratis proeflessen en ontdek of De Roersoppers bij jou
-              past! Neem contact op om je eerste training in te plannen.
+            <p className="mt-3 text-blue-200 text-sm sm:text-base">
+              Plan je eerste proeftraining of meld je direct aan.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-              <Button className="flex items-center justify-center h-10 sm:h-12 px-4 sm:px-6 text-sm sm:text-base font-semibold bg-[#3b82f6] text-white hover:bg-[#1d4ed8] transition-colors">
-                Download Aanmeldingsformulier
-                <ArrowDown className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+            <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+              <Button
+                asChild
+                className="h-11 sm:h-12 px-5 sm:px-6 bg-[#3b82f6] hover:bg-[#1d4ed8]"
+              >
+                <a
+                  href="/aanmeldingsformulier.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download aanmeldingsformulier (PDF)"
+                >
+                  <FileDown className="mr-2" /> Aanmeldingsformulier
+                </a>
               </Button>
-              <Button className="flex items-center justify-center h-10 sm:h-12 px-4 sm:px-6 text-sm sm:text-base font-semibold bg-white text-[#1d4ed8] border-2 border-[#1d4ed8] hover:bg-[#1d4ed8] hover:text-white hover:border-transparent transition-all">
-                <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                Contact Opnemen
+              <Button
+                asChild
+                variant="outline"
+                className="h-11 sm:h-12 px-5 sm:px-6 bg-white text-[#1d4ed8] border-2 border-[#1d4ed8] hover:bg-[#1d4ed8] hover:text-white"
+              >
+                <Link href="/contact">
+                  Contact opnemen <ArrowRight className="ml-2" />
+                </Link>
               </Button>
             </div>
           </div>
